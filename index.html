@@ -5,44 +5,78 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>QDesign Auto Center</title>
 </head>
 
 <body>
     <div class="container">
-        <header class="header">
-            <nav class="emails">
-                <a href="tel:0096524731477">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>+ 965 2473 1477</span>
-                </a>
-                <a href="mailto:info@qdesignauto.com">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@qdesignauto.com</span>
-                </a>
+        <!-- HEADER -->
+        <header class="header column">
+            <nav class="socials-nav row">
+                <div class="emails row">
+                    <a href="tel:0096524731477" class="row">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+ 965 2473 1477</span>
+                    </a>
+                    <a href="mailto:info@qdesignauto.com" class="row">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@qdesignauto.com</span>
+                    </a>
+                </div>
+                <div class="socials row">
+                    <a href="" class="row"><i class="fab fa-facebook-f"></i></a>
+                    <a href="" class="row"><i class="fab fa-instagram"></i></a>
+                    <a href="" class="row"><i class="fab fa-twitter"></i></a>
+                </div>
             </nav>
-            <nav class="socials">
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
+
+            <nav class="pages-nav row">
+                <img class="logo" src="./public/images/logo.png" alt="Q Design Auto Center logo">
+                <ul class="links row">
+                    <li class="active-link"><a href="/">home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li class="services">
+                        <a href="">Services</a>
+                        <i class="fas fa-chevron-down"></i>
+                        <ul>
+                            <li><a href="">home</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Services</a></li>
+                            <li><a href="">Products</a></li>
+                            <li><a href="">Gallery</a></li>
+                            <li><a href="">Testimonials</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">Testimonials</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
             </nav>
         </header>
-        <div class="images-slider">
-            <div class="images">
+
+        <div class="images-slider column">
+            <div class="images row">
                 <div class="image-container" id="car_1">
-                    <img src="./images/car_1.jpg" class="zoom-animation">
-                    <div class="images-overlay"></div>
+                    <img src="./public/images/lambo.jpg" class="zoom-animation">
+                        <div class="images-overlay"></div>
                     </img>
                 </div>
                 <div class="image-container" id="car_2">
-                    <img src="./images/car_2.jpg">
-                    <div class="images-overlay"></div>
+                    <img src="./public/images/leather_repair.jpg">
+                        <div class="images-overlay"></div>
                     </img>
                 </div>
                 <div class="image-container" id="car_3">
-                    <img src="./images/car_3.jpg">
-                    <div class="images-overlay"></div>
+                    <img src="./public/images/Ferrari.jpg">
+                        <div class="images-overlay"></div>
                     </img>
                 </div>
             </div>
@@ -68,7 +102,8 @@
     <script src="https://kit.fontawesome.com/f8a4cbb026.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./js/slider.js"></script>
+    <script src="./public/js/slider.js"></script>
+    <script src="./public/js/header.js"></script>
 </body>
 
 </html>

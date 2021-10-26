@@ -1,8 +1,22 @@
+/* 
+
+|| THEME ||
+
+black: #000000
+light black: #151515
+light orange: #f8a145
+orange: #f07900
+dark orange: #d35100 
+
+*/
+
 /* GLOBAL */
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     display: flex;
@@ -10,61 +24,184 @@ body{
     align-items:center;
 }
 
-/* MAIN CONTAINER */
-.container{
-    width: 100%;
-    height: 100%;
-    display:flex;
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
     flex-direction: column;
 }
 
-/* HEADER */
-.header{
+/* MAIN CONTAINER */
+
+.container{
     width: 100%;
-    background-color: #000;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4rem;
+    height: 100%;
 }
 
-.emails, .socials{
-    display: flex;
-    flex-direction: row;
+/* SOCIALS NAV BAR  */
+.header{
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    z-index: 10;
+}
+
+.socials-nav, .pages-nav{
+    width: 100%;
+    padding: 0 4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials-nav{
+    font-size: 12px;
+    font-weight: 400;
+    height: 25%;
+    background-color: #131313;
+}
+.pages-nav{
+    color: rgb(240, 240, 240);
+    height: 75%;
+    background-color:transparent;
+}
+.socials-nav a, .pages-nav a{
+    text-decoration: none;
+}
+.socials-nav li, .pages-nav li{
+    list-style: none;
 }
 .emails a, .socials a{
-    color: white;
+    text-transform: uppercase;
+    color: #FFF;
+}
+.emails a i{ 
+    padding-top: .05rem; 
+    padding-right: 0.7rem; 
+}
+.emails a{ 
+    padding-right: 1.5rem; 
+}
+.socials a{ 
+    padding-left: 1.5rem; 
+}
+
+/* PAGES NAV BAR */
+.logo{
+    width: 200px;
+    height: auto;
+}
+.links li {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    padding: .85rem 1.2rem;
+    text-transform: uppercase;
+}
+@keyframes linksHoverAnimation{
+    from {
+        opacity: 0;
+        bottom: -12.5px;
+    }
+    to{
+        opacity: 1;
+        bottom: -3px;
+    }
+}
+.links li:hover::after {
+    content: "";
+    position: absolute;
+    height: 2.3px;
+    width: 100%;
+    background-color: #F0502B;
+    left:0;
+    animation-name: linksHoverAnimation;
+    animation-duration: .25s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.links a{ 
+    color: #fff;
+    letter-spacing: 2px;
+    transition: all 0.25s ease;
+}
+.services:hover::after, .services li:hover::after{
+    display: none;
+}
+.services i{
+    font-size: 12px;
+    padding-left: .3rem;
+    padding-top: .1rem;
+}
+
+.services ul{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 180px;
+    align-items: left;
+    top: 2.75rem;
+    left: 0;
+    background-color: #151515;
+}
+.services:hover ul{
+    display: flex;
+}
+
+.services ul li{
+    font-size: 16px;
+    font-weight: 300;
     text-decoration: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgb(44, 44, 44);
 }
-.emails a{
-    padding-right: 1.5rem;
+.services ul li:nth-last-child(1){ border-bottom: 1px solid transparent; }
+.services ul li a{
+    padding: .65rem 1.5rem;
+    color: rgb(228, 228, 228);
+    transition: all 0.3s ease;
 }
-.socials a{
-    padding-left: 1.5rem;
+.services ul li a:hover{
+	color: #F0502B;
 }
-.emails a i{
-    padding-right: 0.7rem;
+
+.active-link a{
+    position: relative;
+    color: #F0502B;
+}
+.active-link::after{
+    content: "";
+    position: absolute;
+    height: 2.3px;
+    width: 100%;
+    background-color: #F0502B;
+    bottom: -3px;
+    left:0;
+    animation-name: linksHoverAnimation;
+    animation-duration: .25s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 /* IMAGES SLIDER CONTAINER */
 .images-slider{
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
+    margin-top: 30px;
 }
 .images{
     width: 100%;
-    height: 70vh;
-    display: flex;
-    flex-direction: row;
+    height: 96vh;
     justify-content: flex-start;
-    overflow: hidden;
+
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
 
     -moz-user-select: none;    /* TO DISABLE IMAGE SELECT */
     -webkit-user-select: none;
@@ -72,10 +209,13 @@ body{
 
     -webkit-overflow-scrolling: touch;    /* Enable Safari touch scrolling physics */
 }
+.images::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
 .image-container{
     position: relative;
     min-width: 100vw;
-    height: 75vh;
+    height: 100%;
 
     display: flex;
     justify-content: center;
@@ -85,8 +225,6 @@ body{
 .image-container img{
     width: 100%;
     height: 100%;
-    transform: scale(1.1);
-    overflow: hidden;
 }
 .images-overlay{
     position: absolute;
@@ -95,15 +233,16 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.45);
 }
+
 /* USE .zoom-animation CLASS FOR SLOW IMAGE ZOOM IN ANIMATION */
 @keyframes slowZoom{
     0%{
-        transform: scale(1.1);
+        transform: scale(1);
     }
     100%{
-        transform: scale(1.16);
+        transform: scale(1.1);
     }
 }
 
@@ -112,9 +251,10 @@ body{
     animation-duration: 10s;
 }
 
+/* SLIDER FOOTER */
 .images-slider-footer{
     position: relative;
-    top: -91px;
+    top: -92px;
     width: 100%;
     min-height: 95px;
     max-height: 95px;
@@ -123,7 +263,7 @@ body{
     align-items: center;
 }
 .images-slider-footer .links{
-    width: 650px;
+    width: 700px;
     min-width: 500px;
     color: white;
     background-color: black;
@@ -135,15 +275,16 @@ body{
 }
 .images-slider-footer .links > *{
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 400;
     color: white;
     text-decoration: none;
     padding: 1rem 1.3rem;
     animation-name: buttonHoverAnimationEnd;
 }
 .images-slider-footer .number{
-    border: 1.5px solid rgb(226, 115, 25);
-    background-color: rgb(226, 115, 25);
+    border: 1.5px solid #F0502B;
+    background-color: #F0502B;
 }
 .images-slider-footer .number i{
     padding-right: .5rem;
@@ -157,7 +298,7 @@ body{
     background-color: rgba(226, 115, 25, 0);
 }
 .images-slider-footer .quote:hover{
-    color: rgb(226, 115, 25);
+    color: #F0502B;
     background-color: white;
 }
 
@@ -230,10 +371,8 @@ body{
     animation-fill-mode: forwards;
 }
 
-
+/* SLIDER BUTTONS */
 .slider-buttons{
-    position: absolute;
-    left: 47%;
     width: 100px;
     display: flex;
     flex-direction: row;
@@ -247,7 +386,6 @@ body{
     font-size: 13px;
     padding: .2rem;
 }
-
 .slider-buttons a:nth-child(1)  i{
     opacity: 1;
 }

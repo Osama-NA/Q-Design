@@ -1,6 +1,5 @@
 // VARIABLES
 let isDown = false;
-let isUp = true;
 let startX;
 let scrollLeft;
 
@@ -9,13 +8,15 @@ const imageContainers = [...document.querySelectorAll('.images > .image-containe
 const sliderButtonOne = document.querySelector('#car-one-button').children[0];
 const sliderButtonTwo = document.querySelector('#car-two-button').children[0];
 const sliderButtonThree = document.querySelector('#car-three-button').children[0];
-
 // FUNCTIONS
 
-// TO REMOVE ON LOAD ANIMATIONS AFTER 2 SECONDS OF LOADING, TO ALLOW ON HOVER ANIMATIONS
 setTimeout(() => {
+    // TO REMOVE ON LOAD ANIMATIONS 2 SECONDS AFTER LOADING, TO ALLOW ON HOVER ANIMATIONS
     $(".links .number").removeAttr("id");
     $(".links .quote").removeAttr("id");
+
+    // TO REMOVE TEXT POP UP ON LOAD ANIMATION 2 SECONDS AFTER LOADING, FOR ANIMATION RESET AFTER SNAP SCROLL
+    removePopUp(); 
 }, 2000);
 
 // TO ADD ON HOVER ANIMATIONS
@@ -24,7 +25,7 @@ setTimeout(() => {
     $(".links .quote").addClass("links-hover-animation");
 }, 2500);
 
-// GIVES A SLOW ZOOM IN ANIMATION
+// GIVES A SLOW ZOOM IN ANIMATION FOR SLIDER IMAGES
 const addZoom = () => {
     imageContainers.map(container => {
         container.children[0].classList.add("zoom-animation");
@@ -34,6 +35,16 @@ const removeZoom = () => {
     imageContainers.map(container => {
         container.children[0].classList.remove("zoom-animation");
     })
+}
+
+// GIVES A POP UP ANIMATION FOR SLIDER INFO TEXT
+const addPopUp = () => {
+    $(".slider-info").css("animation-name", "sliderInfoAnimation");
+    $(".slider-info-border").css("animation-name", "sliderInfoBorderAnimation");
+}
+const removePopUp = () => {
+    $(".slider-info").css("animation-name", "none");
+    $(".slider-info-border").css("animation-name", "none");
 }
 
 const scrollSnap = (e) => {
@@ -81,16 +92,19 @@ const slideOne = (scroll) => {
     $(slider).animate({ scrollLeft: scroll });
     buttonTwoSelected();
     addZoom();
+    addPopUp();
 }
 const slideTwo = (scroll) => {
     $(slider).animate({ scrollLeft: scroll });
     buttonThreeSelected();
     addZoom();
+    addPopUp();
 }
 const slideThree = (scroll) => {
     $(slider).animate({ scrollLeft: scroll });
     buttonOneSelected();
     addZoom();
+    addPopUp();
 }
 
 // This function checks slider's scrollLeft and returns 'current-slide' index accordingly
@@ -135,47 +149,33 @@ const buttonThreeSelected = () => {
 
 // EVENT LISTENERS
 
-// SLIDER BUTTONS 
-$(sliderButtonOne).click(() => buttonOneSelected());
-$(sliderButtonTwo).click(() => buttonTwoSelected());
-$(sliderButtonThree).click(() => buttonThreeSelected());
-
 // DRAG SCROLL SLIDER CONTROLS
-
-// Here scrollSnap is only called if the mouse is clicked so that the function isn't called twice by 'mouseout' event and 'mouseup' event
-slider.addEventListener('mouseout', (e) => {
-    if (!isUp) scrollSnap(e); //SCROLL
-    resetSlideShowInterval(); // RESET SLIDESHOW, TO AVOID AUTO-SCROLL AFTER USER ALREADY SCROLLING
-});
 
 slider.addEventListener('mouseleave', () => {
     isDown = false;
-    isUp = true;
 });
 
 slider.addEventListener('mouseup', (e) => {
     isDown = false;
-    isUp = true;
     addZoom();
+    addPopUp(); // TEXT POP UP ANIMATION
     scrollSnap(e); //SCROLL
     resetSlideShowInterval(); // RESET SLIDESHOW, TO AVOID AUTO-SCROLL AFTER USER ALREADY SCROLLING
 });
 
 slider.addEventListener('mousedown', (e) => {
     isDown = true; // To disable snap effect and slideshow while slider is being scrolled or clicked
-    isUp = false;
-
     scrollLeft = slider.scrollLeft;
     startX = e.pageX - scrollLeft;
     removeZoom();
+    removePopUp();
 });
 
 slider.addEventListener('mousemove', (e) => {
     if (!isDown) return;
-    isUp = false;
     e.preventDefault();
 
-    const walk = (e.pageX - scrollLeft - startX) * .76; //scroll-speed 
+    const walk = (e.pageX - scrollLeft - startX) * .75; //scroll-speed 
     //NOTE: INCREASING SPEED MORE MIGHT CAUSE THE SCROLL EFFECT TO GET STUCK ON REPEAT AND CRASH
 
     slider.scrollLeft = scrollLeft - walk;

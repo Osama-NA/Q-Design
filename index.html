@@ -11,13 +11,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <title>QDesign Auto Center</title>
+    <title>Q Design Auto Center</title>
 </head>
 
 <body>
     <div class="container">
         <!-- HEADER -->
         <header class="header column">
+            <!-- SOCIALS NAV BAR -->
             <nav class="socials-nav row">
                 <div class="emails row">
                     <a href="tel:0096524731477" class="row">
@@ -36,6 +37,7 @@
                 </div>
             </nav>
 
+            <!-- PAGES NAV BAR -->
             <nav class="pages-nav row">
                 <img class="logo" src="./public/images/logo.png" alt="Q Design Auto Center logo">
                 <ul class="links row">
@@ -51,37 +53,73 @@
                             <li><a href="">Products</a></li>
                             <li><a href="">Gallery</a></li>
                             <li><a href="">Testimonials</a></li>
-                            <li><a href="">Contact</a></li>
+                            <li><a href="">Contact us</a></li>
                         </ul>
                     </li>
                     <li><a href="">Products</a></li>
                     <li><a href="">Gallery</a></li>
                     <li><a href="">Testimonials</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="">Contact US</a></li>
                 </ul>
             </nav>
         </header>
 
+        <!-- SLIDESHOW CONTAINER -->
         <div class="images-slider column">
             <div class="images row">
                 <div class="image-container" id="car_1">
                     <img src="./public/images/lambo.jpg" class="zoom-animation">
-                        <div class="images-overlay"></div>
+                        <div class="images-overlay">
+                            <div class="slider-info column">
+                                <h1>Leather Repair</h1>
+                                <p>
+                                    Leather repair fixes all types of damages that occur in leather. 
+                                    Using proper interior repair equipment and guidelines, technicians with 
+                                    specialized skills can easily recolor carpet, interior panels and seats. 
+                                </p>
+                                <a href="">Find out more</a>
+                                <div class="slider-info-border"></div>
+                            </div>
+                        </div>
                     </img>
                 </div>
                 <div class="image-container" id="car_2">
                     <img src="./public/images/leather_repair.jpg">
-                        <div class="images-overlay"></div>
+                        <div class="images-overlay">
+                            <div class="slider-info column">
+                                <h1>Leather Repair</h1>
+                                <p>
+                                    Leather repair fixes all types of damages that occur in leather. 
+                                    Using proper interior repair equipment and guidelines, technicians with 
+                                    specialized skills can easily recolor carpet, interior panels and seats. 
+                                </p>
+                                <a href="">Find out more</a>
+                                <div class="slider-info-border"></div>
+                            </div>
+                        </div>
                     </img>
                 </div>
                 <div class="image-container" id="car_3">
                     <img src="./public/images/Ferrari.jpg">
-                        <div class="images-overlay"></div>
+                        <div class="images-overlay">
+                            <div class="slider-info column">
+                                <h1>Leather Repair</h1>
+                                <p>
+                                    Leather repair fixes all types of damages that occur in leather. 
+                                    Using proper interior repair equipment and guidelines, technicians with 
+                                    specialized skills can easily recolor carpet, interior panels and seats. 
+                                </p>
+                                <a href="">Find out more</a>
+                                <div class="slider-info-border"></div>
+                            </div>
+                        </div>
                     </img>
                 </div>
             </div>
 
+            <!-- SLIDESHOW FOOTER -->
             <section class="images-slider-footer">
+                <!-- FOOTER LINK BUTTONS-->
                 <div class="links">
                     <p>LETS TALK.</p>
                     <a href="tel:0096524731477" class="number" id="leftToRight">
@@ -90,10 +128,12 @@
                     </a>
                     <a href="" class="quote" id="topToBottom">REQUEST A QUOTE</a>
                 </div>
+
+                <!-- FOOTER SLIDER BUTTONS-->
                 <div class="slider-buttons">
-                    <a href="#car_1" id="car-one-button"><i class="far fa-circle"></i></a>
-                    <a href="#car_2" id="car-two-button"><i class="far fa-circle"></i></a>
-                    <a href="#car_3" id="car-three-button"><i class="far fa-circle"></i></a>
+                    <a id="car-one-button"><i class="far fa-circle"></i></a>
+                    <a id="car-two-button"><i class="far fa-circle"></i></a>
+                    <a id="car-three-button"><i class="far fa-circle"></i></a>
                 </div>
             </section>
         </div>
@@ -103,7 +143,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./public/js/slider.js"></script>
-    <script src="./public/js/header.js"></script>
 </body>
 
 </html>

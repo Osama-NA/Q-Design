@@ -89,7 +89,7 @@ body{
 
 /* PAGES NAV BAR */
 .logo{
-    width: 200px;
+    width: 180px;
     height: auto;
 }
 .links li {
@@ -123,7 +123,7 @@ body{
 }
 .links a{ 
     color: #fff;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     transition: all 0.25s ease;
 }
 .services:hover::after, .services li:hover::after{
@@ -232,8 +232,87 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes sliderInfoAnimation{
+    from{
+        bottom: -12.5rem;
+        opacity: 0;
+    }
+    to{
+        bottom: 0;
+        opacity: 1;
+    }
+}
+@keyframes sliderInfoBorderAnimation{
+    from{
+        left: -7.5rem;
+        opacity: 0;
+    }
+    to{
+        left: -1rem;
+        opacity: 1;
+    }
+}
+.slider-info{
+    position: relative;
+    color: #fff;
+    margin-left: 95px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 75ch;
+    padding-left: 2rem;
+    padding-bottom: .73rem;
+    animation-name: sliderInfoAnimation;
+    animation-duration: 1.25s;
+    animation-timing-function: ease;
+}
+.slider-info-border{
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    background-color: #F0502B;
+    top: 0;
+    left: -1rem;
+    animation-name: sliderInfoBorderAnimation;
+    animation-duration: 1.3s;
+    animation-timing-function: ease;
+}
+.slider-info h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+.slider-info p{
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: -0.5px 0.5px 3px #00000042;
+    padding-bottom: 1rem;
+}
+.slider-info a{
+    width: auto;
+    font-size: 17px;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .75rem 1.25rem;
+    letter-spacing: 1.5px;
+    background-color: #131313;
+    transition: all .5s ease;
+}
+.slider-info a:hover{
+    color: #F0502B;
+    background-color: #ffffff;
 }
 
 /* USE .zoom-animation CLASS FOR SLOW IMAGE ZOOM IN ANIMATION */
@@ -254,7 +333,7 @@ body{
 /* SLIDER FOOTER */
 .images-slider-footer{
     position: relative;
-    top: -92px;
+    top: -85px;
     width: 100%;
     min-height: 95px;
     max-height: 95px;
@@ -263,23 +342,24 @@ body{
     align-items: center;
 }
 .images-slider-footer .links{
-    width: 700px;
+    width: 665px;
     min-width: 500px;
     color: white;
-    background-color: black;
+    background-color: #131313;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding: 1rem;
+    padding: .9rem;
 }
 .images-slider-footer .links > *{
     text-align: center;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     text-decoration: none;
-    padding: 1rem 1.3rem;
+    padding: .75rem 1.2rem;
+    letter-spacing: 1.5px;
     animation-name: buttonHoverAnimationEnd;
 }
 .images-slider-footer .number{
@@ -373,6 +453,8 @@ body{
 
 /* SLIDER BUTTONS */
 .slider-buttons{
+    position: absolute;
+    left: 47.45%;
     width: 100px;
     display: flex;
     flex-direction: row;

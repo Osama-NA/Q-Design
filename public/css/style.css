@@ -239,7 +239,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.53);
 }
 @keyframes sliderInfoAnimation{
     from{
@@ -309,7 +309,7 @@ body{
     text-transform: uppercase;
     padding: .75rem 1.25rem;
     letter-spacing: 1.5px;
-    background-color: #131313;
+    background-color: #000000;
     transition: all .5s ease;
 }
 .slider-info-button:hover{
@@ -348,7 +348,7 @@ body{
     width: 665px;
     min-width: 500px;
     color: white;
-    background-color: #131313;
+    background-color: #0e0e0e;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

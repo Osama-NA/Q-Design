@@ -49,6 +49,16 @@ const removePopUp = () => {
     $(".slider-info-border").css("animation-name", "none");
 }
 
+const showSlideInfo = () => {
+    $(".slider-info").show()
+    $(".slider-info-border").show()
+};
+
+const hideSlideInfo = () => {
+    $(".slider-info").hide()
+    $(".slider-info-border").hide()
+};
+
 // THIS FUNCTIONS IS USED TO SNAP SCROLL TO A SPECIFIC SLIDE 
 // ACCORDING TO HOW MUCH THE SLIDER HAS BEEN SCROLLED
 const scrollSnap = () => {
@@ -57,14 +67,29 @@ const scrollSnap = () => {
 
     if (lengthScrolled < imageWidth / 2 && lengthScrolled < imageWidth) {
         $(slider).animate({ scrollLeft: 0 });
-        addPopUp(1); // TEXT POP UP ANIMATION
+        hideSlideInfo();
+        setTimeout(() => {
+            showSlideInfo();
+            addPopUp(1); // TEXT POP UP ANIMATION
+        }, 300);
     } else if (lengthScrolled > imageWidth / 2 && lengthScrolled < imageWidth * 1.5) {
         $(slider).animate({ scrollLeft: imageWidth });
-        addPopUp(2); // TEXT POP UP ANIMATION
+        hideSlideInfo();
+        setTimeout(() => {
+            showSlideInfo();
+            addPopUp(2); // TEXT POP UP ANIMATION
+        }, 300);
     } else if (lengthScrolled > imageWidth * 1.5) {
         $(slider).animate({ scrollLeft: imageWidth * 2 });
-        addPopUp(3); // TEXT POP UP ANIMATION
+        hideSlideInfo();
+        setTimeout(() => {
+            showSlideInfo();
+            addPopUp(3); // TEXT POP UP ANIMATION
+        }, 300);
     }
+
+    removeZoom();
+    setTimeout(() => addZoom(), 150); // IMAGE ZOOM-IN ANIMATION 
 }
 
 // THIS SLIDESHOW FUNCTION RUNS EVERY 10 SECONDS INTERVAL 
@@ -159,6 +184,16 @@ const buttonThreeSelected = () => {
     $(sliderButtonThree).css("opacity", 1);
 }
 
+const slidersInPlace = () => {
+    const scrollPosition = $(slider).scrollLeft();
+    const imageWidth = $('.image-container').width();
+    
+    if (scrollPosition === 0 || scrollPosition === imageWidth || scrollPosition === imageWidth * 2){
+        return true;
+    }
+    return false;
+}
+
 // EVENT LISTENERS
 
 // DRAG SCROLL SLIDER CONTROLS
@@ -169,17 +204,16 @@ slider.addEventListener('mouseleave', () => {
 
 slider.addEventListener('mouseup', () => {
     isDown = false;
-    removeZoom(); // REMOVE IMAGE ZOOM-IN ANIMATION 
-    scrollSnap();
     resetSlideShowInterval(); // RESET SLIDESHOW, TO AVOID AUTO-SCROLL AFTER USER ALREADY SCROLLING
-    setTimeout(() => addZoom(), 150); // IMAGE ZOOM-IN ANIMATION 
+
+    if(slidersInPlace()) return;
+        scrollSnap();
 });
 
 slider.addEventListener('mousedown', (e) => {
     isDown = true; // To disable snap effect and slideshow while slider is being scrolled or clicked
     scrollLeft = slider.scrollLeft;
     startX = e.pageX - scrollLeft;
-    removePopUp();
 });
 
 slider.addEventListener('mousemove', (e) => {

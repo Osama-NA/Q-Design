@@ -1,13 +1,14 @@
 // VARIABLES
 let isDown = false;
 let startX;
-let scrollLeft;
 
 const slider = document.querySelector('.images');
 const imageContainers = [...document.querySelectorAll('.images > .image-container')];
 const sliderButtonOne = document.querySelector('#car-one-button').children[0];
 const sliderButtonTwo = document.querySelector('#car-two-button').children[0];
 const sliderButtonThree = document.querySelector('#car-three-button').children[0];
+const clickableContainer = document.querySelectorAll('.clickable-container');
+
 // FUNCTIONS
 
 setTimeout(() => {
@@ -38,40 +39,51 @@ const removeZoom = () => {
 }
 
 // GIVES A POP UP ANIMATION FOR SLIDER INFO TEXT
-const addPopUp = () => {
-    $(".slider-info").css("animation-name", "sliderInfoAnimation");
-    $(".slider-info-border").css("animation-name", "sliderInfoBorderAnimation");
+const addPopUp = (i) => {
+    $(`.slide-info-${i}`).css("animation-name", "sliderInfoAnimation");
+    $(`.slide-info-${i} .slider-info-border`).css("animation-name", "sliderInfoBorderAnimation");
 }
+
 const removePopUp = () => {
     $(".slider-info").css("animation-name", "none");
     $(".slider-info-border").css("animation-name", "none");
 }
 
-const scrollSnap = (e) => {
-    let lengthScrolled = e.target.parentNode.parentNode.scrollLeft;
-    if (e.target.parentNode.parentNode.classList == "images-slider") {
-        lengthScrolled = e.target.parentNode.parentNode.children[0].scrollLeft;
-    }
+// THIS FUNCTIONS IS USED TO SNAP SCROLL TO A SPECIFIC SLIDE 
+// ACCORDING TO HOW MUCH THE SLIDER HAS BEEN SCROLLED
+const scrollSnap = () => {
+    let lengthScrolled = slider.scrollLeft;
+    const imageWidth = $('.image-container').width();
 
-    const imageWidth = e.target.offsetWidth;
-    if (lengthScrolled < imageWidth / 2 && lengthScrolled < imageWidth && lengthScrolled != 0) {
-        $(e.target.parentNode.parentNode).animate({ scrollLeft: 0 });
-    } else if (lengthScrolled > imageWidth / 2 && lengthScrolled < imageWidth * 1.5 && lengthScrolled != imageWidth) {
-        $(e.target.parentNode.parentNode).animate({ scrollLeft: imageWidth });
-    } else if (lengthScrolled > imageWidth * 1.5 && lengthScrolled != imageWidth * 2) {
-        $(e.target.parentNode.parentNode).animate({ scrollLeft: imageWidth * 2 });
+    if (lengthScrolled < imageWidth / 2 && lengthScrolled < imageWidth) {
+        $(slider).animate({ scrollLeft: 0 });
+        addPopUp(1); // TEXT POP UP ANIMATION
+    } else if (lengthScrolled > imageWidth / 2 && lengthScrolled < imageWidth * 1.5) {
+        $(slider).animate({ scrollLeft: imageWidth });
+        addPopUp(2); // TEXT POP UP ANIMATION
+    } else if (lengthScrolled > imageWidth * 1.5) {
+        $(slider).animate({ scrollLeft: imageWidth * 2 });
+        addPopUp(3); // TEXT POP UP ANIMATION
     }
 }
 
+// THIS SLIDESHOW FUNCTION RUNS EVERY 10 SECONDS INTERVAL 
+// FIRST CURRENT SLIDE SHOW INDEX IS RETURNED USING getSlideShowIndex()
+// THEN ACCORDING TO THE CURRENT SLIDE WE SCROLL TO NEXT SLIDE USING IMAGE WIDTH
+// SCROLL TO SLIDE ONE: scroll= 0
+// SCROLL TO SLIDE TWO: scroll= IMAGE WIDTH
+// SCROLL TO SLIDE THREE: scroll= IMAGE WIDTH * 2
 const slideShow = () => {
     if (isDown) return; // If slider being clicked or dragged stop slideshow
 
     let slideShowIndex = getSlideShowIndex();
     if (slideShowIndex < 0) return; // if no index returned, then exit function. 
 
-    removeZoom(); // to re-use animation
+    // to re-use animation
+    removeZoom();
+    removePopUp();
 
-    const scroll = imageContainers[0].children[0].offsetWidth; // image width
+    const scroll = $('.image-container').width(); // image width
 
     switch (slideShowIndex) {
         case 0:
@@ -92,24 +104,24 @@ const slideOne = (scroll) => {
     $(slider).animate({ scrollLeft: scroll });
     buttonTwoSelected();
     addZoom();
-    addPopUp();
+    addPopUp(2);
 }
 const slideTwo = (scroll) => {
     $(slider).animate({ scrollLeft: scroll });
     buttonThreeSelected();
     addZoom();
-    addPopUp();
+    addPopUp(3);
 }
 const slideThree = (scroll) => {
     $(slider).animate({ scrollLeft: scroll });
     buttonOneSelected();
     addZoom();
-    addPopUp();
+    addPopUp(1);
 }
 
 // This function checks slider's scrollLeft and returns 'current-slide' index accordingly
 const getSlideShowIndex = () => {
-    const imageWidth = imageContainers[0].children[0].offsetWidth;
+    const imageWidth = $('.image-container').width();
     const scrolled = slider.scrollLeft;
 
     switch (scrolled) {
@@ -124,10 +136,10 @@ const getSlideShowIndex = () => {
     }
 }
 
-let slideShowInterval = setInterval(slideShow, 10000);
+let slideShowInterval = setInterval(slideShow, 3000);
 const resetSlideShowInterval = () => {
     clearInterval(slideShowInterval);
-    slideShowInterval = setInterval(slideShow, 10000);
+    slideShowInterval = setInterval(slideShow, 3000);
 }
 
 // GIVES FULL OPACITY TO BUTTON OF CURRENT SLIDE AND REDUCES THE OPACITY OF SIBLINGS
@@ -155,19 +167,18 @@ slider.addEventListener('mouseleave', () => {
     isDown = false;
 });
 
-slider.addEventListener('mouseup', (e) => {
+slider.addEventListener('mouseup', () => {
     isDown = false;
-    addZoom();
-    addPopUp(); // TEXT POP UP ANIMATION
-    scrollSnap(e); //SCROLL
+    removeZoom(); // REMOVE IMAGE ZOOM-IN ANIMATION 
+    scrollSnap();
     resetSlideShowInterval(); // RESET SLIDESHOW, TO AVOID AUTO-SCROLL AFTER USER ALREADY SCROLLING
+    setTimeout(() => addZoom(), 150); // IMAGE ZOOM-IN ANIMATION 
 });
 
 slider.addEventListener('mousedown', (e) => {
     isDown = true; // To disable snap effect and slideshow while slider is being scrolled or clicked
     scrollLeft = slider.scrollLeft;
     startX = e.pageX - scrollLeft;
-    removeZoom();
     removePopUp();
 });
 

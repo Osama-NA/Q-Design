@@ -202,6 +202,7 @@ body{
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
+    overflow: hidden;
 
     -moz-user-select: none;    /* TO DISABLE IMAGE SELECT */
     -webkit-user-select: none;
@@ -227,6 +228,8 @@ body{
     height: 100%;
 }
 .images-overlay{
+    display: inline-block;
+    position: relative;
     position: absolute;
     top: 0;
     left: 0;
@@ -238,7 +241,6 @@ body{
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 @keyframes sliderInfoAnimation{
     from{
         bottom: -12.5rem;
@@ -298,7 +300,7 @@ body{
     text-shadow: -0.5px 0.5px 3px #00000042;
     padding-bottom: 1rem;
 }
-.slider-info a{
+.slider-info-button{
     width: auto;
     font-size: 17px;
     font-weight: 300;
@@ -310,7 +312,7 @@ body{
     background-color: #131313;
     transition: all .5s ease;
 }
-.slider-info a:hover{
+.slider-info-button:hover{
     color: #F0502B;
     background-color: #ffffff;
 }
@@ -321,13 +323,14 @@ body{
         transform: scale(1);
     }
     100%{
-        transform: scale(1.1);
+        transform: scale(1.09);
     }
 }
 
 .zoom-animation{
     animation-name: slowZoom;
     animation-duration: 10s;
+    animation-fill-mode: forwards;
 }
 
 /* SLIDER FOOTER */

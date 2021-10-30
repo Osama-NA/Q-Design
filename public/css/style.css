@@ -75,6 +75,10 @@ body{
 .emails a, .socials a{
     text-transform: uppercase;
     color: #FFF;
+    transition: all .2s ease;
+}
+.emails a:hover, .socials a:hover{
+    color: #F0502B;
 }
 .emails a i{ 
     padding-top: .05rem; 
@@ -139,7 +143,7 @@ body{
     position: absolute;
     display: none;
     flex-direction: column;
-    width: 180px;
+    min-width: 180px;
     align-items: left;
     top: 2.75rem;
     left: 0;
@@ -151,6 +155,7 @@ body{
 
 .services ul li{
     font-size: 16px;
+    width: 230px;
     font-weight: 300;
     text-decoration: none;
     display: flex;
@@ -195,14 +200,14 @@ body{
     margin-top: 30px;
 }
 .images{
-    width: 100%;
-    height: 96vh;
+    width: 100vw;
+    height: 96.4vh;
     justify-content: flex-start;
 
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll; 
     overflow: hidden;
+    overflow-x: scroll; 
 
     -moz-user-select: none;    /* TO DISABLE IMAGE SELECT */
     -webkit-user-select: none;
@@ -224,7 +229,8 @@ body{
     overflow: hidden;
 }
 .image-container img{
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     height: 100%;
 }
 .images-overlay{
@@ -233,7 +239,8 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -329,7 +336,7 @@ body{
 
 .zoom-animation{
     animation-name: slowZoom;
-    animation-duration: 10s;
+    animation-duration: 8s;
     animation-fill-mode: forwards;
 }
 
@@ -473,4 +480,123 @@ body{
 }
 .slider-buttons a:nth-child(1)  i{
     opacity: 1;
+}
+
+@media (max-width: 767px) {
+    /* HEADER */
+    .socials-nav{
+        display: none;
+    }
+    .pages-nav{
+        background-color: #131313;
+    }
+
+    /* IMAGES SLIDER CONTAINER */
+    .images-slider{
+        margin-top: 90px;
+    }
+    .images{
+        height: 89vh;
+        scroll-snap-type: x mandatory;
+    }
+    .image-container{
+        scroll-snap-align: center;
+    }
+
+    /* SLIDER INFO */
+    @keyframes sliderInfoBorderAnimation{
+        from{
+            left: -7.5rem;
+            opacity: 0;
+        }
+        to{
+            left: 0.2rem;
+            opacity: 1;
+        }
+    }
+    .slider-info{
+        margin-left: 20px;
+        max-width: 38ch;
+        padding-bottom: .53rem;
+    }
+    .slider-info-border{
+        width: 5px;
+        left: 0.2rem;
+        top: -.2rem;
+    }
+    .slider-info h1{
+        font-size: 18px;
+        padding-bottom: .8rem;
+    }
+    .slider-info p{
+        font-size: 12px;
+        font-weight: 300;
+        padding-bottom: .8rem;
+    }
+    .slider-info-button{
+        font-size: 10px;
+        font-weight: 300;
+        padding: .5rem .6rem;
+    }
+
+    /* USE .zoom-animation CLASS FOR SLOW IMAGE ZOOM IN ANIMATION */
+    @keyframes slowZoom{
+        0%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(1.06);
+        }
+    }
+
+    /* SLIDER FOOTER */
+    .images-slider-footer{
+        top: -69px;
+    }
+    .images-slider-footer .links{
+        width: 335px;
+        min-width: 335px;
+        padding: .5rem;
+    }
+    .images-slider-footer .links > *{
+        font-size: 8px;
+        font-weight: 300;
+        padding: .5rem .6rem;
+    }
+    .images-slider-footer .number{
+        border: 1px solid #F0502B;
+        margin-left: .2rem;
+    }
+    .images-slider-footer .number i{
+        padding-right: .2rem;
+    }
+    .images-slider-footer .quote{
+        border: 1px solid white;
+        margin-left: .45rem;
+    }
+
+    /* used in .links-hover-animation:hover */
+    @keyframes buttonHoverAnimation{
+        0%{
+            top: 0;
+        }
+        100%{
+            top: -4px;
+        }
+    }
+    /* used in .images-slider-footer .links > * */
+    @keyframes buttonHoverAnimationEnd{
+        0%{
+            top: -4px;
+        }
+        100%{
+            top: 0;
+        }
+    }
+
+    /* SLIDER BUTTONS */
+    .slider-buttons{
+        left: 39%;
+        bottom: 5rem;
+    }
 }

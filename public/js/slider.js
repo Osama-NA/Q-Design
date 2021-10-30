@@ -1,7 +1,7 @@
 // VARIABLES
 let isDown = false;
 let startX;
-
+let isScrolling;
 const slider = document.querySelector('.images');
 const imageContainers = [...document.querySelectorAll('.images > .image-container')];
 const sliderButtonOne = document.querySelector('#car-one-button').children[0];
@@ -10,6 +10,9 @@ const sliderButtonThree = document.querySelector('#car-three-button').children[0
 const clickableContainer = document.querySelectorAll('.clickable-container');
 
 // FUNCTIONS
+
+// RETURNS WHETHER CURRENT SCREEN SIZE IS MOBILE SIZE OR NOT
+const isMobile = () => window.screen.width < 768? true : false;
 
 setTimeout(() => {
     // TO REMOVE ON LOAD ANIMATIONS 2 SECONDS AFTER LOADING, TO ALLOW ON HOVER ANIMATIONS
@@ -62,32 +65,48 @@ const hideSlideInfo = () => {
 // THIS FUNCTIONS IS USED TO SNAP SCROLL TO A SPECIFIC SLIDE 
 // ACCORDING TO HOW MUCH THE SLIDER HAS BEEN SCROLLED
 const scrollSnap = () => {
+    if (isMobile()) return;
+
     let lengthScrolled = slider.scrollLeft;
     const imageWidth = $('.image-container').width();
 
     if (lengthScrolled < imageWidth / 2 && lengthScrolled < imageWidth) {
-        $(slider).animate({ scrollLeft: 0 });
-        hideSlideInfo();
+        $(slider).animate({ scrollLeft: 0 }); //SCROLL TO SLIDE ONE
+
+        buttonOneSelected(); // SELECT SLIDER BUTTON ONE
+
+        hideSlideInfo(); // HIDE SLIDER TEXT
+
+        // AFTER 300 ms OF HIDING SLIDE TEXT SHOW TEXT WITH POP UP ANIMATION
         setTimeout(() => {
-            showSlideInfo();
+            showSlideInfo(); // SHOW SLIDER TEXT
             addPopUp(1); // TEXT POP UP ANIMATION
         }, 300);
     } else if (lengthScrolled > imageWidth / 2 && lengthScrolled < imageWidth * 1.5) {
-        $(slider).animate({ scrollLeft: imageWidth });
+        $(slider).animate({ scrollLeft: imageWidth }); //SCROLL TO SLIDE TWO
+
+        buttonTwoSelected(); // SELECT SLIDER BUTTON TWO
+
         hideSlideInfo();
+
         setTimeout(() => {
             showSlideInfo();
-            addPopUp(2); // TEXT POP UP ANIMATION
+            addPopUp(2);
         }, 300);
     } else if (lengthScrolled > imageWidth * 1.5) {
-        $(slider).animate({ scrollLeft: imageWidth * 2 });
+        $(slider).animate({ scrollLeft: imageWidth * 2 }); //SCROLL TO SLIDE THREE
+
+        buttonThreeSelected(); // SELECT SLIDER BUTTON THREE
+
         hideSlideInfo();
+
         setTimeout(() => {
             showSlideInfo();
-            addPopUp(3); // TEXT POP UP ANIMATION
+            addPopUp(3);
         }, 300);
     }
 
+    // AFTER 150 ms OF REMOVING ZOOM ANIMATION ADD ZOOM IN ANIMATION AGAIN ON SCROLL SNAP
     removeZoom();
     setTimeout(() => addZoom(), 150); // IMAGE ZOOM-IN ANIMATION 
 }
@@ -146,8 +165,8 @@ const slideThree = (scroll) => {
 
 // This function checks slider's scrollLeft and returns 'current-slide' index accordingly
 const getSlideShowIndex = () => {
-    const imageWidth = $('.image-container').width();
-    const scrolled = slider.scrollLeft;
+    const imageWidth = Math.floor($('.image-container').width());
+    const scrolled = Math.floor(slider.scrollLeft);
 
     switch (scrolled) {
         case 0:
@@ -161,10 +180,12 @@ const getSlideShowIndex = () => {
     }
 }
 
-let slideShowInterval = setInterval(slideShow, 3000);
+let slideShowInterval = setInterval(slideShow, 8000);
+
+// USED TO RESET SLIDESHOW ON MANUAL SCROLL
 const resetSlideShowInterval = () => {
     clearInterval(slideShowInterval);
-    slideShowInterval = setInterval(slideShow, 3000);
+    slideShowInterval = setInterval(slideShow, 8000);
 }
 
 // GIVES FULL OPACITY TO BUTTON OF CURRENT SLIDE AND REDUCES THE OPACITY OF SIBLINGS
@@ -184,9 +205,10 @@ const buttonThreeSelected = () => {
     $(sliderButtonThree).css("opacity", 1);
 }
 
+// THIS FUNCTION CHECKS IF SLIDER CONTAINER HAS BEEN SCROLLED OR SLIDES IN PLACE
 const slidersInPlace = () => {
-    const scrollPosition = $(slider).scrollLeft();
-    const imageWidth = $('.image-container').width();
+    const scrollPosition = Math.floor($(slider).scrollLeft());
+    const imageWidth = Math.floor($('.image-container').width());
     
     if (scrollPosition === 0 || scrollPosition === imageWidth || scrollPosition === imageWidth * 2){
         return true;
@@ -194,44 +216,90 @@ const slidersInPlace = () => {
     return false;
 }
 
+// SAME AS scrollSnap BUT WITHOUT SNAP EFFECT
+const mobileScroll = () => {
+    let lengthScrolled = slider.scrollLeft;
+    const imageWidth = $('.image-container').width();
+
+    if (lengthScrolled < imageWidth / 2 && lengthScrolled < imageWidth) {
+        buttonOneSelected();
+
+        hideSlideInfo();
+        setTimeout(() => {
+            showSlideInfo();
+            addPopUp(1);
+        }, 50);
+    } else if (lengthScrolled > imageWidth / 2 && lengthScrolled < imageWidth * 1.5) {
+        buttonTwoSelected();
+
+        hideSlideInfo();
+        setTimeout(() => {
+            showSlideInfo();
+            addPopUp(2);
+        }, 50);
+    } else if (lengthScrolled > imageWidth * 1.5) {
+        buttonThreeSelected();
+
+        hideSlideInfo();
+        setTimeout(() => {
+            showSlideInfo();
+            addPopUp(3);
+        }, 1);
+    }
+
+    // AFTER 150 ms OF REMOVING ZOOM ANIMATION ADD ZOOM IN ANIMATION AGAIN ON SCROLL SNAP
+    removeZoom();
+    setTimeout(() => addZoom(), 150); // IMAGE ZOOM-IN ANIMATION 
+}
+
 // EVENT LISTENERS
 
 // DRAG SCROLL SLIDER CONTROLS
-
 slider.addEventListener('mouseleave', () => {
-    isDown = false;
+    if (isMobile()) return;
+    isDown = false
 });
 
 slider.addEventListener('mouseup', () => {
-    isDown = false;
-    resetSlideShowInterval(); // RESET SLIDESHOW, TO AVOID AUTO-SCROLL AFTER USER ALREADY SCROLLING
+    if (isMobile()) return;
 
-    if(slidersInPlace()) return;
-        scrollSnap();
+    isDown = false;
+
+    if(slidersInPlace()) return; // IF SLIDER ISN'T SCROLLED EXIT 
+
+    resetSlideShowInterval(); // RESET SLIDESHOW, TO AVOID AUTO-SCROLL AFTER USER ALREADY SCROLLING
+    scrollSnap();
 });
 
 slider.addEventListener('mousedown', (e) => {
+    if (isMobile()) return;
     isDown = true; // To disable snap effect and slideshow while slider is being scrolled or clicked
+
     scrollLeft = slider.scrollLeft;
     startX = e.pageX - scrollLeft;
 });
 
 slider.addEventListener('mousemove', (e) => {
+    if (isMobile()) return;
+
     if (!isDown) return;
     e.preventDefault();
 
-    const walk = (e.pageX - scrollLeft - startX) * .75; //scroll-speed 
+    const walk = (e.pageX - scrollLeft - startX) * .765; //scroll-speed 
     //NOTE: INCREASING SPEED MORE MIGHT CAUSE THE SCROLL EFFECT TO GET STUCK ON REPEAT AND CRASH
 
     slider.scrollLeft = scrollLeft - walk;
 });
 
-// 'MOUSE DOWN' EVENT ON IMAGE CONTAINERS
-imageContainers[0].addEventListener('mousedown', () => buttonOneSelected());
-imageContainers[1].addEventListener('mousedown', () => buttonTwoSelected());
-imageContainers[2].addEventListener('mousedown', () => buttonThreeSelected());
+// IF MOBILE USER, AFTER SCROLL RE-SELECT SLIDER BUTTON AND ANIMATIONS
+slider.addEventListener('scroll', () => {
+    if (!isMobile()) return;
 
-// 'MOUSE MOVE' EVENT ON IMAGE CONTAINERS
-imageContainers[0].addEventListener('mousemove', () => buttonOneSelected());
-imageContainers[1].addEventListener('mousemove', () => buttonTwoSelected());
-imageContainers[2].addEventListener('mousemove', () => buttonThreeSelected());
+    removeZoom();
+    clearTimeout(isScrolling);
+    
+    isScrolling = setTimeout(() => {
+        resetSlideShowInterval();
+        mobileScroll();
+    }, 120);
+})

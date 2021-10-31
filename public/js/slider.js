@@ -2,12 +2,17 @@
 let isDown = false;
 let startX;
 let isScrolling;
+let isMenuOpened = false;
+let isServicesMenuOpened = false;
+
 const slider = document.querySelector('.images');
 const imageContainers = [...document.querySelectorAll('.images > .image-container')];
 const sliderButtonOne = document.querySelector('#car-one-button').children[0];
 const sliderButtonTwo = document.querySelector('#car-two-button').children[0];
 const sliderButtonThree = document.querySelector('#car-three-button').children[0];
 const clickableContainer = document.querySelectorAll('.clickable-container');
+const menuButton = document.querySelector('.mobile-menu-button');
+const servicesMenuButton = document.querySelector('.services-button i');
 
 // FUNCTIONS
 
@@ -18,6 +23,7 @@ setTimeout(() => {
     // TO REMOVE ON LOAD ANIMATIONS 2 SECONDS AFTER LOADING, TO ALLOW ON HOVER ANIMATIONS
     $(".links .number").removeAttr("id");
     $(".links .quote").removeAttr("id");
+    $(menuButton).css("animation-name","none");
 
     // TO REMOVE TEXT POP UP ON LOAD ANIMATION 2 SECONDS AFTER LOADING, FOR ANIMATION RESET AFTER SNAP SCROLL
     removePopUp(); 
@@ -252,6 +258,28 @@ const mobileScroll = () => {
     setTimeout(() => addZoom(), 150); // IMAGE ZOOM-IN ANIMATION 
 }
 
+// MENU BUTTON ON CLICK ANIMATIONS
+const addOpenButtonAnimation = () => {
+    $('.dash1').css("animation-name", "dashOneOpenAnimation");
+    $('.dash2').css("animation-name", "dashTwoOpenAnimation");
+    $('.dash3').css("animation-name", "dashThreeOpenAnimation");
+    isMenuOpened = true;
+}
+const closeOpenButtonAnimation = () => {
+    $('.dash1').css("animation-name", "dashOneCloseAnimation");
+    $('.dash2').css("animation-name", "dashTwoCloseAnimation");
+    $('.dash3').css("animation-name", "dashThreeCloseAnimation");
+    isMenuOpened = false;
+}
+
+const openMenu = () => {
+    $('.pages-nav .links').css("display", "flex");
+    $(`.pages-nav .links`).css("animation-name", "openMenuAnimation");
+} 
+const closeMenu = () => {
+    $(`.pages-nav .links`).css("animation-name", "closeMenuAnimation");
+} 
+
 // EVENT LISTENERS
 
 // DRAG SCROLL SLIDER CONTROLS
@@ -303,3 +331,35 @@ slider.addEventListener('scroll', () => {
         mobileScroll();
     }, 120);
 })
+
+menuButton.addEventListener('click', () => {
+    if(!isMenuOpened){
+        addOpenButtonAnimation();
+        openMenu();
+    }else{
+        closeOpenButtonAnimation(); 
+        closeMenu();
+    }
+})
+
+servicesMenuButton.addEventListener('click', () => {
+    if (!isServicesMenuOpened) {
+        openServicesMenu();
+    } else {
+        closeServicesMenu();
+    }
+})
+
+const openServicesMenu = () => {
+    $(".below-services").css("margin-top", "26.7rem");
+    $(".services ul").css("display", "flex");
+    $(servicesMenuButton).css("transform", "rotateZ(0deg)");
+    isServicesMenuOpened = true;
+}
+
+const closeServicesMenu = () => {
+    $(".below-services").css("margin-top", "0");
+    $(".services ul").css("display", "none");
+    $(servicesMenuButton).css("transform", "rotateZ(90deg)");
+    isServicesMenuOpened = false;
+}

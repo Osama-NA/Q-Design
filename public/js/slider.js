@@ -53,17 +53,16 @@ const addPopUp = (i) => {
     $(`.slide-info-${i}`).css("animation-name", "sliderInfoAnimation");
     $(`.slide-info-${i} .slider-info-border`).css("animation-name", "sliderInfoBorderAnimation");
 }
-
 const removePopUp = () => {
     $(".slider-info").css("animation-name", "none");
     $(".slider-info-border").css("animation-name", "none");
 }
 
+// SHOW / HIDE SLIDE INFO
 const showSlideInfo = () => {
     $(".slider-info").show()
     $(".slider-info-border").show()
 };
-
 const hideSlideInfo = () => {
     $(".slider-info").hide()
     $(".slider-info-border").hide()
@@ -187,6 +186,7 @@ const getSlideShowIndex = () => {
     }
 }
 
+// CREATING A SLIDESHOW WITH 8 SECONDS INTERVAL BETWEEN EACH SLIDE
 let slideShowInterval = setInterval(slideShow, 8000);
 
 // USED TO RESET SLIDESHOW ON MANUAL SCROLL
@@ -273,6 +273,7 @@ const closeOpenButtonAnimation = () => {
     isMenuOpened = false;
 }
 
+// STYLING ON SHOW / HIDE NAV MENU
 const openMenu = () => {
     $('.pages-nav .links').css("display", "flex");
     $(`.pages-nav .links`).css("animation-name", "openMenuAnimation");
@@ -281,8 +282,43 @@ const closeMenu = () => {
     $(`.pages-nav .links`).css("animation-name", "closeMenuAnimation");
 } 
 
+// STYLING ON SHOW / HIDE SERVICES DROP DOWN MENU
+const openServicesMenu = () => {
+    $(".below-services").css("margin-top", "31.7rem");
+    $(".services ul").css("display", "flex");
+    $(servicesMenuButton).css("transform", "rotateZ(0deg)");
+    isServicesMenuOpened = true;
+}
+const closeServicesMenu = () => {
+    $(".below-services").css("margin-top", "0");
+    $(".services ul").css("display", "none");
+    $(servicesMenuButton).css("transform", "rotateZ(90deg)");
+    isServicesMenuOpened = false;
+}
+
+// SLIDER IMAGES FOR MOBILE AND DESKTOP SCREEN SIZE
+const setMobileSliderImages = () => {
+    document.querySelector('#car_1 img').src = "./public/images/mobile_mercedes.jpg";
+    document.querySelector('#car_2 img').src = "./public/images/mobile_leather_repair.jpg";
+    document.querySelector('#car_3 img').src = "./public/images/mobile_lambo.jpg";
+}
+const setSliderImages = () => {
+    document.querySelector('#car_1 img').src = "./public/images/lambo.jpg";
+    document.querySelector('#car_2 img').src = "./public/images/leather_repair.jpg";
+    document.querySelector('#car_3 img').src = "./public/images/Ferrari.jpg";
+}
+
 // EVENT LISTENERS
 
+// ON LOAD IF MOBILE SCREEN SIZE THEN SET MOBILE SIZE SLIDER IMAGES
+window.addEventListener('load', () => {
+    if (isMobile()) {
+        setMobileSliderImages();
+    }
+})
+
+// FOR DESKTOP SIZE
+// AFTER 100px SCROLL GIVE NAV BAR BACKGROUND COLOR
 $(window).scroll(() => {
     if(isMobile()) return;
     
@@ -343,6 +379,8 @@ slider.addEventListener('scroll', () => {
     }, 120);
 })
 
+// ANIMATE MENU BUTTON THEN SHOW MENU
+// ANIMATE MENU BUTTON THEN HIDE MENU
 menuButton.addEventListener('click', () => {
     if(!isMenuOpened){
         addOpenButtonAnimation();
@@ -353,6 +391,7 @@ menuButton.addEventListener('click', () => {
     }
 })
 
+// SHOW / HIDE SERVICES DROP DOWN MENU
 servicesMenuButton.addEventListener('click', () => {
     if (!isServicesMenuOpened) {
         openServicesMenu();
@@ -360,17 +399,3 @@ servicesMenuButton.addEventListener('click', () => {
         closeServicesMenu();
     }
 })
-
-const openServicesMenu = () => {
-    $(".below-services").css("margin-top", "26.7rem");
-    $(".services ul").css("display", "flex");
-    $(servicesMenuButton).css("transform", "rotateZ(0deg)");
-    isServicesMenuOpened = true;
-}
-
-const closeServicesMenu = () => {
-    $(".below-services").css("margin-top", "0");
-    $(".services ul").css("display", "none");
-    $(servicesMenuButton).css("transform", "rotateZ(90deg)");
-    isServicesMenuOpened = false;
-}

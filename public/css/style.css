@@ -22,6 +22,7 @@ body{
     display: flex;
     justify-content: center;
     align-items:center;
+    background-color: rgb(245, 245, 245);
 }
 
 .row{
@@ -38,6 +39,7 @@ body{
 .container{
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 /* SOCIALS NAV BAR  */
@@ -336,8 +338,6 @@ body{
     width: 100%;
     min-height: 95px;
     max-height: 95px;
-    display: flex;
-    flex-direction: row;
     align-items: center;
 }
 .images-slider-footer .links{
@@ -345,8 +345,6 @@ body{
     min-width: 500px;
     color: white;
     background-color: #0e0e0e;
-    display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     padding: .9rem;
@@ -413,6 +411,7 @@ body{
     animation-name: buttonHoverAnimation;
 }
 
+ /* slider footer buttons animations */
 @keyframes leftToRightButtonAnimation{
     0%{
         opacity: 0;
@@ -455,8 +454,6 @@ body{
     position: absolute;
     left: 47.45%;
     width: 100px;
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     justify-self: center;
@@ -467,8 +464,87 @@ body{
     font-size: 13px;
     padding: .2rem;
 }
-.slider-buttons a:nth-child(1)  i{
+.slider-buttons a:nth-child(1)  i{ /* selecting first slide button */
     opacity: 1;
+}
+
+/* ABOUT US */
+.about-us-container{
+    width: 100%;
+    position: relative;
+    top: -40px;
+    justify-content: center;
+    align-items: center;
+}
+.about-us-description, .about-us-image{
+    width: 50%;
+    height: 83.4vh;
+}
+.about-us-description{
+    justify-content: center;
+    margin-left: 4rem;
+}
+.about-us-description > *{
+    padding: 1rem;
+}
+.about-us-description h1{
+    position: relative;
+    font-size: 38px;
+    font-weight: 900;
+    text-transform:  uppercase;
+    letter-spacing: 3.5px;
+    padding-bottom: 3rem;
+}
+.about-us-description h1::after{ /* line below about us title */
+    content: '';
+    height: 3px;
+    width: 130px;
+    background-color: #131313;
+    position: absolute;
+    top: 5.5rem;
+    left: 0rem;
+    margin: 0 1rem;
+}
+.about-us-description p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(44, 44, 44);
+    letter-spacing: .5px;
+}
+.about-us-description a {
+    cursor: pointer;
+    color: rgb(44, 44, 44);
+    align-self: flex-start;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 1rem;
+    padding: 0;
+    letter-spacing: 1.5px;
+    transition: all .3s ease;
+}
+.about-us-description a:hover{
+    color: #F0502B;
+}
+.about-us-image{
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.about-us-image img{
+    width: 60%;
+    height: auto;
+}
+
+/* VIDEO */
+.video{
+    height: 83.45vh;
+}
+.video iframe{
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 767px) {
@@ -511,13 +587,14 @@ body{
     .pages-nav .links{
         display: none; 
         flex-direction: column;
+        justify-content: flex-start;
         position: absolute;
         top: 60px;
         left: 0;
         width: 250px;
         min-height: 92.5vh;
         height: 100%;
-        padding-top: 1rem;
+        padding-top: 2rem;
         background-color: #131313;
         animation-name: openMenuAnimation;
         animation-duration: .5s;
@@ -528,13 +605,13 @@ body{
         display: none; 
     }
     .links li {
-        padding: .6rem 1.2rem .6rem 2rem;
+        padding: .7rem 1.2rem .7rem 2rem;
         font-weight: 300;
     }
     .links li:hover::after, .active-link::after{
         height: 25px;
         width: 2px;
-        top: 5.5px;
+        top: 6.5px;
         left: 20px;
     }
     .services:hover::after, .services li:hover::after{
@@ -565,7 +642,7 @@ body{
         border-bottom: none;
     }
     .services ul li a{
-        padding: .5rem 1rem;
+        padding: .7rem 1rem;
     }
     .below-services{
         margin-top: 0;
@@ -792,5 +869,45 @@ body{
     .slider-buttons{
         left: 39%;
         bottom: 5rem;
+    }
+
+    /* ABOUT US */
+    .about-us-container{
+        top: -50px;
+    }
+    .about-us-image{
+        display: none;
+    }
+    .about-us-description{
+        justify-content: flex-start;
+        margin-left: 1rem;
+        width: 100%;
+        height: 41.7vh; 
+    }
+    .about-us-description > *{
+        padding: .5rem;
+    }
+    .about-us-description h1{
+        font-size: 22px;
+        padding-bottom: 1.5rem;
+    }
+    .about-us-description h1::after{
+        width: 86px;
+        top: 2.9rem;
+        margin: 0 .5rem;
+    }
+    .about-us-description p {
+        width: 90%;
+        font-size: 12px;
+    }
+    .about-us-description a {
+        font-size: 10px;
+        margin: .5rem;
+    }
+
+    /* VIDEO */
+    .video{
+        width: 100vw;
+        height: auto;
     }
 }

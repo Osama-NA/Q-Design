@@ -13,6 +13,7 @@ const sliderButtonThree = document.querySelector('#car-three-button').children[0
 const clickableContainer = document.querySelectorAll('.clickable-container');
 const menuButton = document.querySelector('.mobile-menu-button');
 const servicesMenuButton = document.querySelector('.services-button i');
+const nav = document.querySelector('.pages-nav');
 
 // FUNCTIONS
 
@@ -281,6 +282,16 @@ const closeMenu = () => {
 } 
 
 // EVENT LISTENERS
+
+$(window).scroll(() => {
+    if(isMobile()) return;
+    
+    if($(window).scrollTop() > 100){
+        $(nav).css("background-color","#202020");
+    } else {
+        $(nav).css("background-color", "transparent");
+    }
+})
 
 // DRAG SCROLL SLIDER CONTROLS
 slider.addEventListener('mouseleave', () => {

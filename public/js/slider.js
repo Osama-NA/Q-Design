@@ -19,6 +19,8 @@ const nav = document.querySelector('.pages-nav');
 
 // RETURNS WHETHER CURRENT SCREEN SIZE IS MOBILE SIZE OR NOT
 const isMobile = () => window.screen.width < 768? true : false;
+// RETURNS WHETHER CURRENT SCREEN SIZE IS TABLET SIZE OR NOT
+const isTablet = () => window.screen.width > 768 && window.screen.width < 1200 ? true : false;
 
 setTimeout(() => {
     // TO REMOVE ON LOAD ANIMATIONS 2 SECONDS AFTER LOADING, TO ALLOW ON HOVER ANIMATIONS
@@ -71,7 +73,7 @@ const hideSlideInfo = () => {
 // THIS FUNCTIONS IS USED TO SNAP SCROLL TO A SPECIFIC SLIDE 
 // ACCORDING TO HOW MUCH THE SLIDER HAS BEEN SCROLLED
 const scrollSnap = () => {
-    if (isMobile()) return;
+    if (isMobile() || isTablet()) return;
 
     let lengthScrolled = slider.scrollLeft;
     const imageWidth = $('.image-container').width();
@@ -225,33 +227,26 @@ const slidersInPlace = () => {
 
 // SAME AS scrollSnap BUT WITHOUT SNAP EFFECT
 const mobileScroll = () => {
+    if (!slidersInPlace()) return;
+
     let lengthScrolled = slider.scrollLeft;
     const imageWidth = $('.image-container').width();
 
     if (lengthScrolled < imageWidth / 2 && lengthScrolled < imageWidth) {
         buttonOneSelected();
 
-        hideSlideInfo();
-        setTimeout(() => {
-            showSlideInfo();
-            addPopUp(1);
-        }, 50);
+        showSlideInfo();
+        addPopUp(1);
     } else if (lengthScrolled > imageWidth / 2 && lengthScrolled < imageWidth * 1.5) {
         buttonTwoSelected();
 
-        hideSlideInfo();
-        setTimeout(() => {
-            showSlideInfo();
-            addPopUp(2);
-        }, 50);
+        showSlideInfo();
+        addPopUp(2);
     } else if (lengthScrolled > imageWidth * 1.5) {
         buttonThreeSelected();
 
-        hideSlideInfo();
-        setTimeout(() => {
-            showSlideInfo();
-            addPopUp(3);
-        }, 1);
+        showSlideInfo();
+        addPopUp(3);
     }
 
     // AFTER 150 ms OF REMOVING ZOOM ANIMATION ADD ZOOM IN ANIMATION AGAIN ON SCROLL SNAP
@@ -320,7 +315,7 @@ window.addEventListener('load', () => {
 // FOR DESKTOP SIZE
 // AFTER 100px SCROLL GIVE NAV BAR BACKGROUND COLOR
 $(window).scroll(() => {
-    if(isMobile()) return;
+    if (isMobile() || isTablet()) return;
     
     if($(window).scrollTop() > 100){
         $(nav).css("background-color","#202020");
@@ -331,12 +326,12 @@ $(window).scroll(() => {
 
 // DRAG SCROLL SLIDER CONTROLS
 slider.addEventListener('mouseleave', () => {
-    if (isMobile()) return;
+    if (isMobile() || isTablet()) return;
     isDown = false
 });
 
 slider.addEventListener('mouseup', () => {
-    if (isMobile()) return;
+    if (isMobile() || isTablet()) return;
 
     isDown = false;
 
@@ -347,7 +342,7 @@ slider.addEventListener('mouseup', () => {
 });
 
 slider.addEventListener('mousedown', (e) => {
-    if (isMobile()) return;
+    if (isMobile() || isTablet()) return;
     isDown = true; // To disable snap effect and slideshow while slider is being scrolled or clicked
 
     scrollLeft = slider.scrollLeft;
@@ -355,7 +350,7 @@ slider.addEventListener('mousedown', (e) => {
 });
 
 slider.addEventListener('mousemove', (e) => {
-    if (isMobile()) return;
+    if (isMobile() || isTablet()) return;
 
     if (!isDown) return;
     e.preventDefault();
@@ -368,8 +363,9 @@ slider.addEventListener('mousemove', (e) => {
 
 // IF MOBILE USER, AFTER SCROLL RE-SELECT SLIDER BUTTON AND ANIMATIONS
 slider.addEventListener('scroll', () => {
-    if (!isMobile()) return;
+    if (!isMobile() && !isTablet()) return;
 
+    hideSlideInfo();
     removeZoom();
     clearTimeout(isScrolling);
     
@@ -393,9 +389,23 @@ menuButton.addEventListener('click', () => {
 
 // SHOW / HIDE SERVICES DROP DOWN MENU
 servicesMenuButton.addEventListener('click', () => {
-    if (!isServicesMenuOpened) {
-        openServicesMenu();
-    } else {
-        closeServicesMenu();
+    //Mobile
+    if (isMobile()) {
+        if (!isServicesMenuOpened) {
+            openServicesMenu();
+        } else {
+            closeServicesMenu();
+        }
+    }
+
+    //Tablet 
+    if (isTablet()) {
+        if (!isServicesMenuOpened) {
+            $('.services ul').show();
+            isServicesMenuOpened = true;
+        } else {
+            $('.services ul').hide();
+            isServicesMenuOpened = false;
+        }
     }
 })

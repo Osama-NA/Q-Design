@@ -10,7 +10,6 @@ const imageContainers = [...document.querySelectorAll('.images > .image-containe
 const sliderButtonOne = document.querySelector('#car-one-button').children[0];
 const sliderButtonTwo = document.querySelector('#car-two-button').children[0];
 const sliderButtonThree = document.querySelector('#car-three-button').children[0];
-const clickableContainer = document.querySelectorAll('.clickable-container');
 const menuButton = document.querySelector('.mobile-menu-button');
 const servicesMenuButton = document.querySelector('.services-button i');
 const nav = document.querySelector('.pages-nav');
@@ -189,7 +188,7 @@ const getSlideShowIndex = () => {
 }
 
 // CREATING A SLIDESHOW WITH 8 SECONDS INTERVAL BETWEEN EACH SLIDE
-let slideShowInterval = setInterval(slideShow, 3000);
+let slideShowInterval = setInterval(slideShow, 8000);
 
 // USED TO RESET SLIDESHOW ON MANUAL SCROLL
 const resetSlideShowInterval = () => {

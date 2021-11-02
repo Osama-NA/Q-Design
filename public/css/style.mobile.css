@@ -57,44 +57,44 @@
     .pages-nav .links::-webkit-scrollbar {
         display: none; 
     }
-    .links li {
+    .pages-nav .links li {
         padding: .7rem 1.2rem .7rem 2rem;
         font-weight: 300;
     }
-    .links li:hover::after, .active-link::after{
+    .pages-nav .links li:hover::after, .active-link::after{
         height: 25px;
         width: 2px;
         top: 6.5px;
         left: 20px;
     }
-    .services:hover::after, .services li:hover::after{
+    .pages-nav .services:hover::after, .pages-nav .services li:hover::after{
         display: none;
     }
-    .services-button{
+    .pages-nav .services-button{
         width: 100%;
         justify-content: space-between;
         align-items: center;
     }
-    .services i{
+    .pages-nav .services i{
         color: #F0502B;
         padding: 0;
         transform: rotateZ(90deg);
     }
-    .services ul{
+    .pages-nav .services ul{
         min-width: 180px;
         top: 2.25rem;
         left: 2rem;
         background-color: transparent;
     }
-    .services:hover ul{
+    .pages-nav .services:hover ul{
         display: none;
     }
-    .services ul li{
+    .pages-nav .services ul li{
         font-size: 14px;
         font-weight: 300;
         border-bottom: none;
     }
-    .services ul li a{
+    .pages-nav .services ul li a{
         padding: .7rem 1rem;
     }
     .below-services{
@@ -346,5 +346,41 @@
     .video{
         width: 100vw;
         height: auto;
+    }
+
+    /* FOOTER */
+    footer{
+        padding: 0 1rem;
+    }
+
+    /* FOOTER IMAGE */
+    footer .logo{
+        height: 50px;
+        padding: .25rem 0;
+    }
+
+    /* FOOTER LINKS */
+    footer .links > *{
+        padding: 1rem 0;
+    }
+    footer .links h3{
+        font-size: 8px;
+        padding-bottom: .5rem;
+    }
+    footer .links a, footer .links .about p, footer .links li{
+        font-size: 6px;
+        padding-bottom: .5rem;
+    }
+    footer .links li{
+        padding-bottom: .35rem;
+    }
+    footer .links .about p{
+        padding-right: .75rem;
+    }
+    footer .links .about i{
+        padding-right: .5rem;
+    }
+    footer .contact span{
+        padding-right: .1rem;
     }
 }

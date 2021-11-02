@@ -303,6 +303,24 @@ const setSliderImages = () => {
     document.querySelector('#car_3 img').src = "./public/images/Ferrari.jpg";
 }
 
+// AFTER 100px SCROLL GIVE NAV BAR BACKGROUND COLOR
+const setNavBackground = () => {
+    if (isMobile()) return;
+
+    if ($(window).scrollTop() > 100) {
+        $(nav).css("background-color", "#202020");
+    } else {
+        $(nav).css("background-color", "transparent");
+    }
+}
+
+// ADD IMAGE SLIDE IN ANIMATION ON ABOUT US IMAGE ON ABOUT US CONTAINER SCROLL
+const aboutUsAnimationOnScroll = () => {
+    if ($(window).scrollTop() > 150) {
+        $('.about-us-image').css("animation-name", "imageSlideInAnimation");
+    }
+}
+
 // EVENT LISTENERS
 
 // ON LOAD IF MOBILE SCREEN SIZE THEN SET MOBILE SIZE SLIDER IMAGES
@@ -312,21 +330,9 @@ window.addEventListener('load', () => {
     }
 })
 
-// FOR DESKTOP SIZE
-// AFTER 100px SCROLL GIVE NAV BAR BACKGROUND COLOR
 $(window).scroll(() => {
-    if (isMobile() || isTablet()) return;
-    
-    if($(window).scrollTop() > 100){
-        $(nav).css("background-color","#202020");
-    } else {
-        $(nav).css("background-color", "transparent");
-    }
-
-    // ADD IMAGE SLIDE IN ANIMATION ON ABOUT US IMAGE ON ABOUT US CONTAINER SCROLL
-    if ($(window).scrollTop() > 150) {
-        $('.about-us-image').css("animation-name", "imageSlideInAnimation");
-    }
+    setNavBackground();
+    aboutUsAnimationOnScroll();
 })
 
 // DRAG SCROLL SLIDER CONTROLS

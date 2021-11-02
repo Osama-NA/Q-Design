@@ -173,8 +173,8 @@ const slideThree = (scroll) => {
 
 // This function checks slider's scrollLeft and returns 'current-slide' index accordingly
 const getSlideShowIndex = () => {
-    const imageWidth = Math.floor($('.image-container').width());
-    const scrolled = Math.floor(slider.scrollLeft);
+    const imageWidth = Math.ceil($('.image-container').width());
+    const scrolled = Math.ceil(slider.scrollLeft);
 
     switch (scrolled) {
         case 0:
@@ -189,7 +189,7 @@ const getSlideShowIndex = () => {
 }
 
 // CREATING A SLIDESHOW WITH 8 SECONDS INTERVAL BETWEEN EACH SLIDE
-let slideShowInterval = setInterval(slideShow, 8000);
+let slideShowInterval = setInterval(slideShow, 3000);
 
 // USED TO RESET SLIDESHOW ON MANUAL SCROLL
 const resetSlideShowInterval = () => {
@@ -322,6 +322,11 @@ $(window).scroll(() => {
     } else {
         $(nav).css("background-color", "transparent");
     }
+
+    // ADD IMAGE SLIDE IN ANIMATION ON ABOUT US IMAGE ON ABOUT US CONTAINER SCROLL
+    if ($(window).scrollTop() > 150) {
+        $('.about-us-image').css("animation-name", "imageSlideInAnimation");
+    }
 })
 
 // DRAG SCROLL SLIDER CONTROLS
@@ -361,7 +366,7 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
-// IF MOBILE USER, AFTER SCROLL RE-SELECT SLIDER BUTTON AND ANIMATIONS
+// IF MOBILE OR TABLET USER, AFTER SCROLL RE-SELECT SLIDER BUTTON AND ANIMATIONS
 slider.addEventListener('scroll', () => {
     if (!isMobile() && !isTablet()) return;
 

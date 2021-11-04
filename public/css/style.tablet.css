@@ -203,7 +203,7 @@
         top: -50px;
     }
     .about-us-description, .about-us-image{
-        min-height: 45vh;
+        min-height: 40vh;
         height: auto;
     }
     .about-us-description{
@@ -224,12 +224,12 @@
         left: -.5rem;
     }
     .about-us-description p {
-        font-size: 12px;
+        font-size: 14px;
         color: rgb(29, 29, 29);
     }
     .about-us-description a {
         color: rgb(29, 29, 29);
-        font-size: 12px;
+        font-size: 14px;
     }
     .about-us-image img{
         width: 80%;
@@ -239,6 +239,69 @@
     .video{
         width: 100vw;
         height: 40vh;
+    }
+
+    /* SERVICES */
+    .services-description, .services-images{
+        min-height: 40vh;
+        height: auto;
+    }
+    /* SERVICES DESCRIPTION */
+    .services-description{
+        margin-left: 2rem;
+    }
+    .services-description > *{
+        padding: .6rem;
+    }
+    .services-description h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
+    .services-description h1::after{ /* line below about us title */
+        height: 2.5px;
+        width: 102px;
+        top: 3.7rem;
+        left: -.5rem;
+    }
+    .services-description p {
+        font-size: 14px;
+        color: rgb(29, 29, 29);
+    }
+    .services-buttons a {
+        font-size: 10px;
+        padding: .6rem 1rem;
+    }
+    .services-buttons .number{
+        border: 1.5px solid #131313;
+        background-color: #131313;
+    }
+    .services-buttons .number i{
+        padding-right: .2rem;
+    }
+    .services-buttons .quote{
+        margin-left: .6rem;
+    }
+
+    /* SERVICES IMAGES */
+    .services-images {
+        margin: 2rem 0;
+    }
+    .services-images-overlay{
+        width: 175px;
+        height: 175px;
+        margin: .2rem;
+    }
+    .services-images .services-images-overlay img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        opacity: 0;
+    }
+    .services-images-overlay h3{
+        font-size: 22px;
+        padding: 0 1rem;
     }
         
     /* FOOTER IMAGE */

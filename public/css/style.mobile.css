@@ -61,7 +61,7 @@
         padding: .7rem 1.2rem .7rem 2rem;
         font-weight: 300;
     }
-    .pages-nav .links li:hover::after, .active-link::after{
+    .pages-nav .links li:hover::after,.pages-nav .active-link::after{
         height: 25px;
         width: 2px;
         top: 6.5px;
@@ -288,6 +288,11 @@
         border: 1px solid white;
         margin-left: .45rem;
     }
+    /* SLIDER BUTTONS */
+    .slider-buttons{
+        left: 39%;
+        bottom: 5rem;
+    }
 
     /* used in .links-hover-animation:hover */
     @keyframes buttonHoverAnimation{
@@ -346,6 +351,71 @@
     .video{
         width: 100vw;
         height: auto;
+    }
+
+    /* SERVICES */
+    .services-container{
+        flex-direction: column;
+        margin: 4rem 0;
+    }
+    .services-description, .services-images{
+        width: 100%;
+        height: auto;
+    }
+    /* SERVICES DESCRIPTION */
+    .services-description{
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .services-description > *{
+        padding: .5rem;
+    }
+    .services-description h1{
+        width: 100%;
+        font-size: 22px;
+        margin-left: 2.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .services-description h1::after{ /* line below about us title */
+        width: 86px;
+        top: 2.9rem;
+        margin: 0 .5rem;
+    }
+    .services-description p {
+        width: 90%;
+        font-size: 12px;
+    }
+    .services-buttons {
+        width: 100%;
+        margin-left: 2.5rem;
+    }
+    .services-buttons a {
+        font-size: 10px;
+        padding: .5rem .8rem;
+    }
+    .services-buttons .number i{
+        padding-right: .2rem;
+    }
+
+    /* SERVICES IMAGES */
+    .services-images {
+        justify-content: flex-start;
+        align-items:center;
+        margin: 0;
+        margin-top: 4rem;
+    }
+    .services-images > *{
+        flex-direction: column;
+    }
+    .services-images-overlay{
+        width: 86vw;
+        height: 86vw;
+        margin: 1rem;
+    }
+    .services-images-overlay h3{
+        font-size: 32px;
+        padding: 0 4rem;
     }
 
     /* FOOTER */

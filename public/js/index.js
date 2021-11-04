@@ -14,13 +14,15 @@ const menuButton = document.querySelector('.mobile-menu-button');
 const servicesMenuButton = document.querySelector('.services-button i');
 const nav = document.querySelector('.pages-nav');
 const services = [...document.querySelectorAll('.services-images-overlay')];
+const servicesNumberButton = document.querySelector('.services-buttons .number');
+const servicesQuoteButton = document.querySelector('.services-buttons .quote');
 
 // FUNCTIONS
 
 // RETURNS WHETHER CURRENT SCREEN SIZE IS MOBILE SIZE OR NOT
 const isMobile = () => window.screen.width < 768? true : false;
 // RETURNS WHETHER CURRENT SCREEN SIZE IS TABLET SIZE OR NOT
-const isTablet = () => window.screen.width > 768 && window.screen.width < 1200 ? true : false;
+const isTablet = () => window.screen.width >= 768 && window.screen.width <= 1200 ? true : false;
 
 setTimeout(() => {
     // TO REMOVE ON LOAD ANIMATIONS 2 SECONDS AFTER LOADING, TO ALLOW ON HOVER ANIMATIONS
@@ -316,31 +318,95 @@ const setNavBackground = () => {
 
 // ADD IMAGE SLIDE IN ANIMATION ON ABOUT US IMAGE ON ABOUT US CONTAINER SCROLL
 const aboutUsAnimationOnScroll = () => {
+    if(isTablet()) return;
+
     if ($(window).scrollTop() > 150) {
         $('.about-us-image').css("animation-name", "imageSlideInAnimation");
     }
 }
 
+// this function adds animations to services images after scrolling 1265px, 
+// services images are animated one by one with 500ms delay using setTimeout()
+const servicesImagesAnimationOnScroll = () => {
+    const scroll = $(window).scrollTop();
+
+    if (isMobile()) {
+        if (scroll > 1100) {
+            servicesImagesAnimation();
+            return;
+        }
+    }
+
+    if (isTablet()) {
+        if (scroll > 450) {
+            servicesImagesAnimation();
+            return;
+        }
+    }
+
+    if (scroll > 1265) {
+        servicesImagesAnimation();
+    }
+}
+
+// this function adds animations to services buttons after scrolling 1700px, 
+//then removes the animations 2 seconds later to add on hover animations
+let firstScrollOnServices = true;
 const servicesAnimationOnScroll = () => {
-    if ($(window).scrollTop() > 1265) {
+    const scroll = $(window).scrollTop();
 
-        $(services[0]).addClass('services-images-overlay-animation');
-        $(services[0].children[1]).addClass('services-images-animation');
+    if (isMobile()) {
+        if (scroll > 950) {
+            servicesAnimation();
+            return;
+        }
+    }
+
+    if (isTablet()) {
+        if (scroll > 775) {
+            servicesAnimation();
+            return;
+        }
+    }
+
+    if (scroll > 1700) {
+        servicesAnimation();
+    }
+}
+
+const servicesImagesAnimation = () => {
+    $(services[0]).addClass('services-images-overlay-animation');
+    $(services[0].children[1]).addClass('services-images-animation');
+
+    setTimeout(() => {
+        $(services[1]).addClass('services-images-overlay-animation');
+        $(services[1].children[1]).addClass('services-images-animation');
+    }, 500);
+
+    setTimeout(() => {
+        $(services[2]).addClass('services-images-overlay-animation');
+        $(services[2].children[1]).addClass('services-images-animation');
+    }, 1000);
+
+    setTimeout(() => {
+        $(services[3]).addClass('services-images-overlay-animation');
+        $(services[3].children[1]).addClass('services-images-animation');
+    }, 1500);
+}
+
+const servicesAnimation = () => {
+    if (firstScrollOnServices) {
+        firstScrollOnServices = false;
+
+        servicesNumberButton.setAttribute('id', 'leftToRight');
+        servicesQuoteButton.setAttribute('id', 'topToBottom');
 
         setTimeout(() => {
-            $(services[1]).addClass('services-images-overlay-animation');
-            $(services[1].children[1]).addClass('services-images-animation');
-        }, 500);
-        
-        setTimeout(() => {
-            $(services[2]).addClass('services-images-overlay-animation');
-            $(services[2].children[1]).addClass('services-images-animation');
-        }, 1000);
-
-        setTimeout(() => {
-            $(services[3]).addClass('services-images-overlay-animation');
-            $(services[3].children[1]).addClass('services-images-animation');
-        }, 1500);
+            servicesNumberButton.removeAttribute('id');
+            servicesQuoteButton.removeAttribute('id');
+            servicesNumberButton.classList.add('links-hover-animation');
+            servicesQuoteButton.classList.add('links-hover-animation');
+        }, 2000);
     }
 }
 
@@ -351,12 +417,18 @@ window.addEventListener('load', () => {
     if (isMobile()) {
         setMobileSliderImages();
     }
+    if (isTablet()) {
+        //if it's a tablet device, set about image animation on load instead of on scroll
+        $('.about-us-image').css("animation-name", "imageSlideInAnimation");
+    }
 })
 
+// functions called on window scroll
 $(window).scroll(() => {
     setNavBackground();
     aboutUsAnimationOnScroll();
     servicesAnimationOnScroll();
+    servicesImagesAnimationOnScroll();
 })
 
 // DRAG SCROLL SLIDER CONTROLS

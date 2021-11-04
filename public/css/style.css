@@ -16,6 +16,8 @@ dark orange: #d35100
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 body{
@@ -358,6 +360,7 @@ body{
     padding: .75rem 1.2rem;
     letter-spacing: 1.5px;
     animation-name: buttonHoverAnimationEnd;
+    transition: all .3s ease;
 }
 .images-slider-footer .number{
     border: 1.5px solid #F0502B;
@@ -399,11 +402,11 @@ body{
     }
 }
 
-
+/* used in services section buttons and slideshow footer buttons */
 .links-hover-animation{
     position: relative;
-    transition: all .2s ease;
-    animation-duration: .2s;
+    transition: all .3s ease;
+    animation-duration: .3s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
@@ -602,6 +605,37 @@ body{
     color: rgb(44, 44, 44);
     letter-spacing: .5px;
 }
+.services-buttons a {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: .75rem 1.2rem;
+    letter-spacing: 1.5px;
+    animation-name: buttonHoverAnimationEnd;
+}
+.services-buttons .number{
+    border: 1.5px solid #131313;
+    background-color: #131313;
+}
+.services-buttons .number i{
+    padding-right: .5rem;
+}
+.services-buttons .quote{
+    color: #F0502B;
+    border: 1.5px solid #F0502B;
+    margin-left: 1rem;
+}
+.services-buttons .number:hover{
+    border: 1.5px solid #F0502B;
+    background-color: #F0502B;
+}
+.services-buttons .quote:hover{
+    color: white;
+    background-color: #F0502B;
+}
+
 /* SERVICES IMAGES */
 .services-images {
     justify-content: center;
@@ -611,6 +645,8 @@ body{
 .services-images a{
     text-decoration: none;
 }
+
+/* animations bellow are applied on services images on scroll of services section */
 @keyframes servicesOverlayAnimation{
     0%{
         opacity: 0;
@@ -643,29 +679,24 @@ body{
 
 .services-images-overlay{
     position: relative;
-    top: 0;
-    display: grid;
-    opacity: 0;
-    place-items: center;
     width: 275px;
     height: 275px;
     margin: .25rem;
-    background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    transition: all .5s ease;
-}
-.services-images-overlay:hover{
-    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
 }
 .services-images .services-images-overlay img{
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    z-index: -1;
     opacity: 0;
-    z-index: -10;
 }
 .services-images-overlay h3{
+    height: 100%;
+    display: grid;
+    place-items: center;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -673,10 +704,16 @@ body{
     font-weight: 900;
     padding: 0 3rem;
     letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .5s ease;
  }
+.services-images-overlay h3:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
 /* FOOTER */
 footer{
+    border-top: 2px solid #F0502B;
     background-color: #131313;
     padding: 0 3rem;
 }

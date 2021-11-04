@@ -13,6 +13,7 @@ const sliderButtonThree = document.querySelector('#car-three-button').children[0
 const menuButton = document.querySelector('.mobile-menu-button');
 const servicesMenuButton = document.querySelector('.services-button i');
 const nav = document.querySelector('.pages-nav');
+const services = [...document.querySelectorAll('.services-images-overlay')];
 
 // FUNCTIONS
 
@@ -69,7 +70,7 @@ const hideSlideInfo = () => {
     $(".slider-info-border").hide()
 };
 
-// THIS FUNCTIONS IS USED TO SNAP SCROLL TO A SPECIFIC SLIDE 
+// THIS FUNCTIONS IS USED TO SNAP SCROLL TO A SPECIFIC SLIDE
 // ACCORDING TO HOW MUCH THE SLIDER HAS BEEN SCROLLED
 const scrollSnap = () => {
     if (isMobile() || isTablet()) return;
@@ -305,7 +306,7 @@ const setSliderImages = () => {
 // AFTER 100px SCROLL GIVE NAV BAR BACKGROUND COLOR
 const setNavBackground = () => {
     if (isMobile()) return;
-
+    
     if ($(window).scrollTop() > 100) {
         $(nav).css("background-color", "#202020");
     } else {
@@ -317,6 +318,29 @@ const setNavBackground = () => {
 const aboutUsAnimationOnScroll = () => {
     if ($(window).scrollTop() > 150) {
         $('.about-us-image').css("animation-name", "imageSlideInAnimation");
+    }
+}
+
+const servicesAnimationOnScroll = () => {
+    if ($(window).scrollTop() > 1265) {
+
+        $(services[0]).addClass('services-images-overlay-animation');
+        $(services[0].children[1]).addClass('services-images-animation');
+
+        setTimeout(() => {
+            $(services[1]).addClass('services-images-overlay-animation');
+            $(services[1].children[1]).addClass('services-images-animation');
+        }, 500);
+        
+        setTimeout(() => {
+            $(services[2]).addClass('services-images-overlay-animation');
+            $(services[2].children[1]).addClass('services-images-animation');
+        }, 1000);
+
+        setTimeout(() => {
+            $(services[3]).addClass('services-images-overlay-animation');
+            $(services[3].children[1]).addClass('services-images-animation');
+        }, 1500);
     }
 }
 
@@ -332,6 +356,7 @@ window.addEventListener('load', () => {
 $(window).scroll(() => {
     setNavBackground();
     aboutUsAnimationOnScroll();
+    servicesAnimationOnScroll();
 })
 
 // DRAG SCROLL SLIDER CONTROLS

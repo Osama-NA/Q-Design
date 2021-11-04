@@ -133,12 +133,12 @@ body{
     transition: all 0.25s ease;
 }
 .pages-nav .services:hover::after, .pages-nav .services li:hover::after{
-    display: none;
+    display: none; /* to disable links hover animations on services and the dropdown menu */
 }
 .pages-nav .services i{
-    font-size: 12px;
-    padding-left: .3rem;
-    padding-top: .1rem;
+    font-size: 10px;
+    padding-left: .5rem;
+    padding-top: .25rem;
 }
 
 .pages-nav .services ul{
@@ -156,7 +156,7 @@ body{
 }
 
 .pages-nav .services ul li{
-    font-size: 16px;
+    font-size: 15px;
     width: 230px;
     font-weight: 300;
     text-decoration: none;
@@ -178,7 +178,7 @@ body{
 }
 .active-link a{
     position: relative;
-    color: #F0502B;
+    color: #F0502B !important;
 }
 .mobile-menu-button, .mobile-menu-footer{
     display: none;
@@ -560,6 +560,120 @@ body{
     width: 100%;
     height: 100%;
 }
+
+/* SERVICES */
+.services-container{
+    width: 100%;
+    align-items: center;
+}
+.services-description, .services-images{
+    width: 50%;
+    height: 83.4vh;
+}
+/* SERVICES DESCRIPTION */
+.services-description{
+    justify-content: center;
+    margin-left: 4rem;
+}
+.services-description > *{
+    padding: 1rem;
+}
+.services-description h1{
+    position: relative;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform:  uppercase;
+    letter-spacing: 3.5px;
+    padding-bottom: 3rem;
+}
+.services-description h1::after{ /* line below about us title */
+    content: '';
+    height: 3px;
+    width: 120px;
+    background-color: #131313;
+    position: absolute;
+    top: 5rem;
+    left: 0rem;
+    margin: 0 1rem;
+}
+.services-description p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(44, 44, 44);
+    letter-spacing: .5px;
+}
+/* SERVICES IMAGES */
+.services-images {
+    justify-content: center;
+    align-items:center;
+    margin: 4rem 0;
+}
+.services-images a{
+    text-decoration: none;
+}
+@keyframes servicesOverlayAnimation{
+    0%{
+        opacity: 0;
+        top: 10rem;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+.services-images-overlay-animation{
+    animation-name: servicesOverlayAnimation;
+    animation-duration: .75s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes servicesImagesAnimation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.services-images-animation{
+    animation-name: servicesImagesAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.services-images-overlay{
+    position: relative;
+    top: 0;
+    display: grid;
+    opacity: 0;
+    place-items: center;
+    width: 275px;
+    height: 275px;
+    margin: .25rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all .5s ease;
+}
+.services-images-overlay:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.services-images .services-images-overlay img{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -10;
+}
+.services-images-overlay h3{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    padding: 0 3rem;
+    letter-spacing: 1px;
+ }
 
 /* FOOTER */
 footer{

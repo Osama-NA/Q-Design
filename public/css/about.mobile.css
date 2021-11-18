@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+
+    /* PARTNERS */
+    .partners-container{
+        padding: 1.75rem 0;
+    }
+    .partners-container .heading{
+        padding: 0 0 1.25rem;
+    }
+    .partners-container h1{
+        font-size: 22px;
+    }
+    .partners-container .heading .underline{ /* line below partners title */
+        margin-top: .5rem;
+        height: 2.5px;
+        width: 135px;
+    }
+    .partners-list .partner{
+        width: 120px;
+        height: 70px;
+        margin: .5rem;
+        box-shadow: -8px 8px 10px 1.5px  rgba(58, 58, 58, 0.10);
+    }
+    .partners-list .partner img{
+        width: 70px;
+    }
+}

@@ -1,0 +1,140 @@
+
+/* FOOTER */
+footer{
+    border-top: 2px solid #F0502B;
+    background-color: #131313;
+    padding: 0 3rem;
+}
+
+/* FOOTER IMAGE */
+footer .logo{
+    width: 100%;
+    height: 75px;
+    border-top: 2px solid rgb(44, 44, 44);
+    padding: .5rem 0;
+}
+footer .logo img{
+    width: auto;
+    height: 100%;
+}
+
+/* FOOTER LINKS */
+footer .links > *{
+    width: 25%;
+    padding: 2rem 0;
+}
+footer .links h3{
+    color: #F0502B;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    letter-spacing: 2px;
+}
+footer .links a, footer .links .about p, footer .links li{
+    color: rgb(206, 206, 206);
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: none;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 1rem;
+    letter-spacing: 1px;
+}
+footer .links li{
+    padding-bottom: .5rem;
+}
+footer .links .about p{
+    padding-right: 2rem;
+}
+footer .links .about i{
+    color: rgb(255, 255, 255);
+    padding-right: 1rem;
+    transition: all .2s ease;
+}
+footer .links .about i:hover{
+    color: #F0502B;
+}
+footer .contact span{
+    color: white;
+    font-weight: 400;
+    padding-right: .2rem;
+}
+
+
+                /* TABLET DESIGN */
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    /* FOOTER IMAGE */
+    footer .logo{
+        height: 60px;
+        padding: .3rem 0;
+    }
+
+    /* FOOTER LINKS */
+    footer .links > *{
+        padding: 1.5rem 0;
+    }
+    footer .links h3{
+        font-size: 12px;
+        padding-bottom: .75rem;
+    }
+    footer .links a, footer .links .about p, footer .links li{
+        font-size: 10px;
+        padding-bottom: .75rem;
+    }
+    footer .links li{
+        padding-bottom: .5rem;
+    }
+    footer .links .about p{
+        padding-right: 1rem;
+    }
+    footer .links .about i{
+        padding-right: .75rem;
+    }
+    footer .contact span{
+        padding-right: .2rem;
+    }
+}
+
+
+                /* MOBILE DESIGN */
+
+@media (max-width: 767px) {
+    /* FOOTER */
+    footer{
+        padding: 0 1rem;
+    }
+
+    /* FOOTER IMAGE */
+    footer .logo{
+        height: 50px;
+        padding: .25rem 0;
+    }
+
+    /* FOOTER LINKS */
+    footer .links > *{
+        padding: 1rem 0;
+    }
+    footer .links h3{
+        font-size: 8px;
+        padding-bottom: .5rem;
+    }
+    footer .links a, footer .links .about p, footer .links li{
+        font-size: 6px;
+        padding-bottom: .5rem;
+    }
+    footer .links li{
+        padding-bottom: .35rem;
+    }
+    footer .links .about p{
+        padding-right: .75rem;
+    }
+    footer .links .about i{
+        padding-right: .5rem;
+    }
+    footer .contact span{
+        padding-right: .1rem;
+    }
+}

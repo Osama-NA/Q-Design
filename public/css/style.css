@@ -1,14 +1,4 @@
-/* 
 
-|| THEME ||
-
-black: #000000
-light black: #151515
-light orange: #f8a145
-orange: #f07900
-dark orange: #d35100 
-
-*/
 
 /* GLOBAL */
 
@@ -44,147 +34,6 @@ body{
     overflow: hidden;
 }
 
-/* SOCIALS NAV BAR  */
-.header{
-    position: fixed;
-    width: 100%;
-    height: 120px;
-    z-index: 10;
-}
-
-.socials-nav, .pages-nav{
-    width: 100%;
-    padding: 0 4rem;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.socials-nav{
-    font-size: 12px;
-    font-weight: 400;
-    height: 30px;
-    background-color: #131313;
-}
-.pages-nav{
-    color: rgb(240, 240, 240);
-    height: 90px;
-    background-color:transparent;
-}
-.socials-nav a, .pages-nav a{
-    text-decoration: none;
-}
-.socials-nav li, .pages-nav li{
-    list-style: none;
-}
-.emails a, .socials a{
-    text-transform: uppercase;
-    color: #FFF;
-    transition: all .2s ease;
-}
-.emails a:hover, .socials a:hover{
-    color: #F0502B;
-}
-.emails a i{ 
-    padding-top: .05rem; 
-    padding-right: 0.7rem; 
-}
-.emails a{ 
-    padding-right: 1.5rem; 
-}
-.socials a{ 
-    padding-left: 1.5rem; 
-}
-
-/* PAGES NAV BAR */
-.pages-nav .logo{
-    width: 180px;
-    height: auto;
-}
-.pages-nav .links li {
-    position: relative;
-    font-size: 14px;
-    font-weight: 400;
-    padding: .85rem 1.2rem;
-    text-transform: uppercase;
-}
-@keyframes linksHoverAnimation{
-    from {
-        opacity: 0;
-        bottom: -12.5px;
-    }
-    to{
-        opacity: 1;
-        bottom: -3px;
-    }
-}
-.pages-nav .links li:hover::after, .pages-nav .active-link::after{
-    content: "";
-    position: absolute;
-    height: 2.3px;
-    width: 100%;
-    background-color: #F0502B;
-    left:0;
-    animation-name: linksHoverAnimation;
-    animation-duration: .25s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
-.pages-nav .links a{ 
-    color: #fff;
-    letter-spacing: 1px;
-    transition: all 0.25s ease;
-}
-.pages-nav .services:hover::after, .pages-nav .services li:hover::after{
-    display: none; /* to disable links hover animations on services and the dropdown menu */
-}
-.pages-nav .services i{
-    font-size: 10px;
-    padding-left: .5rem;
-    padding-top: .25rem;
-}
-
-.pages-nav .services ul{
-    position: absolute;
-    display: none;
-    flex-direction: column;
-    min-width: 180px;
-    align-items: left;
-    top: 2.75rem;
-    left: 0;
-    background-color: #151515;
-}
-.pages-nav .services:hover ul{
-    display: flex;
-}
-
-.pages-nav .services ul li{
-    font-size: 15px;
-    width: 230px;
-    font-weight: 300;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    text-transform: capitalize;
-    border-bottom: 1px solid rgb(44, 44, 44);
-}
-.pages-nav .services ul li:nth-last-child(1){ border-bottom: 1px solid transparent; }
-.pages-nav .services ul li a{
-    padding: .65rem 1.5rem;
-    color: rgb(228, 228, 228);
-    transition: all 0.3s ease;
-}
-.pages-nav .services ul li a:hover{
-	color: #F0502B;
-}
-.active-link a{
-    position: relative;
-    color: #F0502B !important;
-}
-.mobile-menu-button, .mobile-menu-footer{
-    display: none;
-}
 
 /* IMAGES SLIDER CONTAINER */
 .images-slider{
@@ -239,7 +88,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.53);
+    background-color: rgba(0, 0, 0, 0.65);
 }
 @keyframes sliderInfoAnimation{
     from{
@@ -582,6 +431,7 @@ body{
     padding: 1rem;
 }
 .services-description h1{
+    color: #131313;
     position: relative;
     font-size: 32px;
     font-weight: 900;
@@ -709,67 +559,4 @@ body{
  }
 .services-images-overlay h3:hover{
     background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* FOOTER */
-footer{
-    border-top: 2px solid #F0502B;
-    background-color: #131313;
-    padding: 0 3rem;
-}
-
-/* FOOTER IMAGE */
-footer .logo{
-    width: 100%;
-    height: 75px;
-    border-top: 2px solid rgb(44, 44, 44);
-    padding: .5rem 0;
-}
-footer .logo img{
-    width: auto;
-    height: 100%;
-}
-
-/* FOOTER LINKS */
-footer .links > *{
-    width: 25%;
-    padding: 2rem 0;
-}
-footer .links h3{
-    color: #F0502B;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-    padding-bottom: 1rem;
-    letter-spacing: 2px;
-}
-footer .links a, footer .links .about p, footer .links li{
-    color: rgb(206, 206, 206);
-    font-size: 12px;
-    font-weight: 300;
-    text-decoration: none;
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    padding-bottom: 1rem;
-    letter-spacing: 1px;
-}
-footer .links li{
-    padding-bottom: .5rem;
-}
-footer .links .about p{
-    padding-right: 2rem;
-}
-footer .links .about i{
-    color: rgb(255, 255, 255);
-    padding-right: 1rem;
-    transition: all .2s ease;
-}
-footer .links .about i:hover{
-    color: #F0502B;
-}
-footer .contact span{
-    color: white;
-    font-weight: 400;
-    padding-right: .2rem;
 }

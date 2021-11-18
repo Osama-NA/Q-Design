@@ -1,43 +1,5 @@
 @media (max-width: 1200px) and (min-width: 768px) {
 
-    /* SOCIALS NAV BAR  */
-    .header{
-        height: 120px;
-    }
-
-    .socials-nav, .pages-nav{
-        padding: 0 1rem;
-    }
-    .socials-nav{
-        font-size: 11px;
-        font-weight: 300;
-    }
-
-    /* PAGES NAV BAR */
-    .pages-nav .logo{
-        width: 140px;
-    }
-    .pages-nav .links li {
-        font-size: 10px;
-        font-weight: 400;
-        padding: .5rem .8rem;
-    }
-    .pages-nav .services i{
-        font-size: 10px;
-    }
-
-    .pages-nav .services ul{
-        min-width: 150px;
-        top: 2rem;
-    }
-    .pages-nav .services ul li{
-        font-size: 10px;
-        width: 150px;
-    }
-    .pages-nav .services ul li a{
-        padding: .5rem .8rem;
-    }
-
     /* SLIDER INFO */
     @keyframes sliderInfoBorderAnimation{
         from{
@@ -302,36 +264,5 @@
     .services-images-overlay h3{
         font-size: 22px;
         padding: 0 1rem;
-    }
-        
-    /* FOOTER IMAGE */
-    footer .logo{
-        height: 60px;
-        padding: .3rem 0;
-    }
-
-    /* FOOTER LINKS */
-    footer .links > *{
-        padding: 1.5rem 0;
-    }
-    footer .links h3{
-        font-size: 12px;
-        padding-bottom: .75rem;
-    }
-    footer .links a, footer .links .about p, footer .links li{
-        font-size: 10px;
-        padding-bottom: .75rem;
-    }
-    footer .links li{
-        padding-bottom: .5rem;
-    }
-    footer .links .about p{
-        padding-right: 1rem;
-    }
-    footer .links .about i{
-        padding-right: .75rem;
-    }
-    footer .contact span{
-        padding-right: .2rem;
     }
 }

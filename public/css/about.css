@@ -38,7 +38,6 @@ body{
     color: #131313;
     width: 100%;
     align-items: center;
-    margin-top:200px; /* DELETE THIS LINE WHEN THE HEADER IS ADDED */
     padding: 2.5rem 0;
 }
 .partners-container .heading{

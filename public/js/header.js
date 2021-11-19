@@ -61,7 +61,7 @@ const setNavBackground = () => {
     if (isMobile()) return;
 
     if ($(window).scrollTop() > 100) {
-        $(nav).css("background-color", "#202020");
+        $(nav).css("background-color", "#202020")
     } else {
         $(nav).css("background-color", "transparent");
     }

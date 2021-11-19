@@ -24,4 +24,23 @@
         height: auto;
         width: 125px;
     }
+    
+    /* WHO ARE WE */
+    .who-are-we > *{
+        width: 49.45vw;
+        height: 30vw;
+    }
+    .who-are-we .description{
+        font-size: 18px;
+    }
+    .who-are-we .title{
+        padding-bottom: 2rem;
+    }
+    .who-are-we .title i{
+        font-size: 60px;
+        padding-right: 2rem;
+    }
+    .who-are-we .title h3{
+        font-size: 26px;
+    }
 }

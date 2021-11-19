@@ -38,7 +38,7 @@ body{
     color: #131313;
     width: 100%;
     align-items: center;
-    padding: 2.5rem 0;
+    padding: 4.5rem 0;
 }
 .partners-container .heading{
     padding: 0 0 2.25rem;
@@ -74,4 +74,114 @@ body{
 .partners-list .partner img{
     height: auto;
     width: 150px;
+}
+
+
+/* WHO ARE WE */
+
+.who-are-we{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 300px;
+}
+.who-are-we > *{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 49.45vw;
+    height: 30vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    animation-duration: .75s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.who-are-we .description{
+    color: rgb(211, 211, 211);
+    font-size: 18px;
+    font-weight: 300;
+    width: 75%;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+}
+.dark{
+    background-color: #131313;
+}
+.light{
+    background-color: #1b1b1b;
+}
+.who-are-we .title{
+    width: 75%;
+    align-items: center;
+    padding: 3rem 0;
+}
+.who-are-we .title i{
+    color: #ff6340;
+    font-size: 60px;
+    padding-right: 2rem;
+}
+.who-are-we .title h3{
+    color: rgb(247, 247, 247);
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+@keyframes aboutUsContainerOneAnimation{
+    from{
+        opacity: 0;
+        top: -15rem;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+@keyframes aboutUsContainerTwoAnimation{
+    from{
+        opacity: 0;
+        left: 15rem;
+    }
+    to{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes aboutUsContainerThreeAnimation{
+    from{
+        opacity: 0;
+        left: -15rem;
+    }
+    to{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes aboutUsContainerFourAnimation{
+    from{
+        opacity: 0;
+        top: 15rem;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+.who-are-we-1{
+    animation-name: aboutUsContainerOneAnimation;
+}
+.who-are-we-2{
+    opacity: 0;
+    animation-name: aboutUsContainerTwoAnimation;
+    /* animation-delay: .75s; */
+}
+.who-are-we-3{
+    opacity: 0;
+    animation-name: aboutUsContainerThreeAnimation;
+    /* animation-delay: .75s; */
+}
+.who-are-we-4{
+    animation-name: aboutUsContainerFourAnimation;
 }

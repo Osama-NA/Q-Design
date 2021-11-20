@@ -1,4 +1,5 @@
-@media (max-width: 1200px) and (min-width: 768px) {
+
+@media (max-width: 1000px) and (min-width: 768px) {
     
     /* PARTNERS */
     .partners-container{
@@ -26,21 +27,76 @@
     }
     
     /* WHO ARE WE */
+    .who-are-we{
+        flex-wrap: wrap-reverse;
+    }
     .who-are-we > *{
-        width: 49.45vw;
-        height: 30vw;
+        min-height: 47.5vw;
     }
     .who-are-we .description{
-        font-size: 18px;
+        width: 90%;
+        line-height: 22px;
+        font-size: 13px;
     }
     .who-are-we .title{
-        padding-bottom: 2rem;
+        width: 90%;
+        padding: 1.5rem 0;
     }
     .who-are-we .title i{
-        font-size: 60px;
+        font-size: 35px;
+        padding-right: 1.5rem;
+    }
+    .who-are-we .title h3{
+        font-size: 19px;
+    }
+}
+@media (max-width: 1200px) and (min-width: 1000px){
+    /* WHO ARE WE */
+    .who-are-we{
+        flex-wrap: wrap-reverse;
+    }
+    .who-are-we > *{
+        height: 35vw;
+    }
+    .who-are-we .description{
+        width: 85%;
+        line-height: 23px;
+        font-size: 15px;
+    }
+    .who-are-we .title{
+        width: 85%;
+        padding: 1.7rem 0;
+    }
+    .who-are-we .title i{
+        font-size: 40px;
+        padding-right: 1.7rem;
+    }
+    .who-are-we .title h3{
+        font-size: 20px;
+    }
+}
+@media (max-width: 1450px) and (min-width: 1200px){
+    /* WHO ARE WE */
+    .who-are-we > *{
+        height: 32.5vw;
+    }
+    .who-are-we{
+        flex-wrap: wrap-reverse;
+    }
+    .who-are-we .description{
+        width: 80%;
+        line-height: 23.5px;
+        font-size: 16px;
+    }
+    .who-are-we .title{
+        width: 80%;
+        padding: 2rem 0;
+    }
+    .who-are-we .title i{
+        font-size: 50px;
         padding-right: 2rem;
     }
     .who-are-we .title h3{
-        font-size: 26px;
+        font-size: 22px;
     }
 }

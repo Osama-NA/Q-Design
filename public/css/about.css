@@ -82,13 +82,12 @@ body{
 .who-are-we{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 300px;
 }
 .who-are-we > *{
     position: relative;
     top: 0;
     left: 0;
-    width: 49.45vw;
+    width: 50%;
     height: 30vw;
     display: flex;
     justify-content: flex-start;
@@ -98,18 +97,11 @@ body{
     animation-fill-mode: forwards;
 }
 .who-are-we .description{
-    color: rgb(211, 211, 211);
     font-size: 18px;
     font-weight: 300;
     width: 75%;
     line-height: 25px;
     letter-spacing: 1.5px;
-}
-.dark{
-    background-color: #131313;
-}
-.light{
-    background-color: #1b1b1b;
 }
 .who-are-we .title{
     width: 75%;
@@ -122,11 +114,18 @@ body{
     padding-right: 2rem;
 }
 .who-are-we .title h3{
-    color: rgb(247, 247, 247);
     font-size: 26px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 3px;
+}
+.dark, .dark h3{
+    background-color: #ffffffc0;
+    color: #131313;
+}
+.light, .light h3{
+    background-color: #131313;
+    color: rgb(211, 211, 211);
 }
 
 @keyframes aboutUsContainerOneAnimation{

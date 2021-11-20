@@ -24,4 +24,37 @@
     .partners-list .partner img{
         width: 70px;
     }
+
+    /* WHO ARE WE */
+    .who-are-we > *{
+        width: 100vw;
+        height: auto;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+    .who-are-we-2, .who-are-we-2 h3{
+        background-color: #ffffffc0;
+        color: #131313;
+    }
+    .who-are-we-1, .who-are-we-1 h3{
+        background-color: #131313;
+        color: rgb(211, 211, 211);
+    }
+    .who-are-we .description{
+        width: 90%;
+        line-height: 22px;
+        font-size: 12px;
+    }
+    .who-are-we .title{
+        width: 90%;
+        padding: 0;
+        padding-bottom: 1.5rem;
+    }
+    .who-are-we .title i{
+        font-size: 35px;
+        padding-right: 1.5rem;
+    }
+    .who-are-we .title h3{
+        font-size: 20px;
+    }
 }

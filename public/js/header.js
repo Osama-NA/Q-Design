@@ -60,7 +60,7 @@ const closeServicesMenu = () => {
 const setNavBackground = () => {
     if (isMobile()) return;
 
-    if ($(window).scrollTop() > 100) {
+    if ($(window).scrollTop() > 75) {
         $(nav).css("background-color", "#202020")
     } else {
         $(nav).css("background-color", "transparent");

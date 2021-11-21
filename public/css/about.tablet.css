@@ -2,14 +2,46 @@
 @media (max-width: 1000px) and (min-width: 768px) {
     /* ABOUT US HEADER */
     .about-us-header{
-        height: 225px;
+        height: 250px;
         background-position-y: -150px;
     }
     .about-us-header h1{
         font-size: 26px;
         padding-bottom: 2rem;
     }
+        
+    /* INFORMATION ABOUT US */
+    .information, .about-us-information-pic-container{
+        height: auto;
+        margin: 2.5rem 0;
+    }
+    .information{
+        margin-left: 1.5rem;
+    }
+    .information > *{
+        padding: .6rem;
+    }
+    .information h1{
+        font-size: 24px;
+        padding-bottom: 1.75rem;
+    }
+    .information h1::after{ /* line below about us title */
+        width: 87.5px;
+        top: 3.25rem;
+        margin: 0 .6rem;
+    }
+    .information p {
+        font-size: 14px;
+    }
     
+    .about-us-information-pic{
+        width: 65%;
+    }
+    .about-us-information-pic::before{
+        bottom: -12.5px;
+        right: -12.5px;
+    }
+
     /* PARTNERS */
     .partners-container{
         padding: 2rem 0;
@@ -18,7 +50,7 @@
         padding: 0 0 1.75rem;
     }
     .partners-container h1{
-        font-size: 26px;
+        font-size: 24px;
     }
     .partners-container .heading .underline{
         margin-top: .75rem;
@@ -65,8 +97,40 @@
         background-position-y: -250px;
     }
     .about-us-header h1{
-        font-size: 28px;
+        font-size: 26px;
         padding-bottom: 2.25rem;
+    }
+        
+    /* INFORMATION ABOUT US */
+    .information, .about-us-information-pic-container{
+        height: auto;
+        margin: 3rem 0;
+    }
+    .information{
+        margin-left: 2rem;
+    }
+    .information > *{
+        padding: .5rem;
+    }
+    .information h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
+    .information h1::after{ /* line below about us title */
+        width: 95px;
+        top: 3.5rem;
+        margin: 0 .6rem;
+    }
+    .information p {
+        font-size: 15px;
+    }
+
+    .about-us-information-pic{
+        width: 65%;
+    }
+    .about-us-information-pic::before{
+        bottom: -15px;
+        right: -15px;
     }
 
     /* WHO ARE WE */
@@ -97,6 +161,36 @@
     /* ABOUT US HEADER */
     .about-us-header{
         background-position-y: -300px;
+    }
+        
+    /* INFORMATION ABOUT US */
+    .information, .about-us-information-pic-container{
+        height: 67.5vh;
+    }
+    .information{
+        margin-left: 3rem;
+    }
+    .information > *{
+        padding: .75rem;
+    }
+    .information h1{
+        font-size: 28px;
+        padding-bottom: 2.5rem;
+    }
+    .information h1::after{ /* line below about us title */
+        width: 105px;
+        top: 4.25rem;
+        margin: 0 .8rem;
+    }
+    .information p {
+        font-size: 15px;
+    }
+    .about-us-information-pic{
+        width: 65%;
+    }
+    .about-us-information-pic::before{
+        bottom: -17.5px;
+        right: -17.5px;
     }
 
     /* WHO ARE WE */

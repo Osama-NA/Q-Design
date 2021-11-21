@@ -1,11 +1,45 @@
 @media (max-width: 767px) {
     /* ABOUT US HEADER */
     .about-us-header{
-        height: 200px;
-        background-position-y: 0px;
+        height: 225px;
+        background-position-y: -25px;
+    }
+    .about-us-heading-container{
+        align-items: center;
     }
     .about-us-header h1{
         font-size: 24px;
+        padding-bottom: 0;
+        padding-top: 3.5rem;
+    }
+
+    /* INFORMATION ABOUT US */
+    .about-us-information-pic-container{
+        display: none;
+    }
+    .information{
+        width: 100%;
+        height: auto;
+        margin: 2rem 1rem;
+    }
+    .information{
+        margin-left: 1.5rem;
+    }
+    .information > *{
+        padding: .5rem;
+    }
+    .information h1{
+        font-size: 22px;
+        padding-bottom: 1.5rem;
+    }
+    .information h1::after{ /* line below about us title */
+        width: 87.5px;
+        height: 2.5px;
+        top: 3rem;
+        margin: 0 .5rem;
+    }
+    .information p {
+        font-size: 12px;
     }
 
     /* PARTNERS */

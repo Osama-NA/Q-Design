@@ -1,5 +1,14 @@
 
 @media (max-width: 1000px) and (min-width: 768px) {
+    /* ABOUT US HEADER */
+    .about-us-header{
+        height: 225px;
+        background-position-y: -150px;
+    }
+    .about-us-header h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
     
     /* PARTNERS */
     .partners-container{
@@ -51,6 +60,15 @@
     }
 }
 @media (max-width: 1200px) and (min-width: 1000px){
+    /* ABOUT US HEADER */
+    .about-us-header{
+        background-position-y: -250px;
+    }
+    .about-us-header h1{
+        font-size: 28px;
+        padding-bottom: 2.25rem;
+    }
+
     /* WHO ARE WE */
     .who-are-we{
         flex-wrap: wrap-reverse;
@@ -76,6 +94,11 @@
     }
 }
 @media (max-width: 1450px) and (min-width: 1200px){
+    /* ABOUT US HEADER */
+    .about-us-header{
+        background-position-y: -300px;
+    }
+
     /* WHO ARE WE */
     .who-are-we > *{
         height: 32.5vw;

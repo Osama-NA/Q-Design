@@ -1,6 +1,4 @@
-
 /* GLOBAL */
-
 *{
     padding: 0;
     margin: 0;
@@ -26,56 +24,38 @@ body{
 }
 
 /* MAIN CONTAINER */
-
 .container{
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-/* PARTNERS */
-.partners-container{
-    color: #131313;
+/* ABOUT US HEADER */
+.about-us-header{
     width: 100%;
-    align-items: center;
-    padding: 4.5rem 0;
+    height: 250px;
+    background: url('/public/images/about_us_header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -435px;
 }
-.partners-container .heading{
-    padding: 0 0 2.25rem;
+.about-us-heading-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-.partners-container h1{
+.about-us-header h1{
+    color: rgb(247, 247, 247);
+    text-transform: uppercase;
     font-size: 32px;
     font-weight: 900;
-    text-transform:  uppercase;
-    letter-spacing: 3.5px;
+    letter-spacing: 2.5px;
+    padding-bottom: 2.5rem;
+    text-align: center;
 }
-.partners-container .heading .underline{ /* line below partners title */
-    margin-top: 1rem;
-    height: 3px;
-    width: 180px;
-    background-color: #F0502B;
-}
-.partners-list{
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.partners-list .partner{
-    width: 200px;
-    height: 150px;
-    margin: 1rem;
-    background-color: rgb(240, 240, 240);
-    box-shadow: -8px 8px 10px 1.5px  rgba(58, 58, 58, 0.10);
-    display: grid;
-    place-items: center;
-}
-.partners-list .partner img{
-    height: auto;
-    width: 150px;
-}
-
 
 /* WHO ARE WE */
 
@@ -127,7 +107,9 @@ body{
     background-color: #131313;
     color: rgb(211, 211, 211);
 }
-
+.light h3{
+    color: rgb(240, 240, 240);
+}
 @keyframes aboutUsContainerOneAnimation{
     from{
         opacity: 0;
@@ -183,4 +165,47 @@ body{
 }
 .who-are-we-4{
     animation-name: aboutUsContainerFourAnimation;
+}
+
+/* PARTNERS */
+.partners-container{
+    color: #131313;
+    width: 100%;
+    align-items: center;
+    padding: 4.5rem 0;
+}
+.partners-container .heading{
+    padding: 0 0 2.25rem;
+    justify-content: center;
+    align-items: center;
+}
+.partners-container h1{
+    font-size: 32px;
+    font-weight: 900;
+    text-transform:  uppercase;
+    letter-spacing: 3.5px;
+}
+.partners-container .heading .underline{ /* line below partners title */
+    margin-top: 1rem;
+    height: 3px;
+    width: 180px;
+    background-color: #F0502B;
+}
+.partners-list{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.partners-list .partner{
+    width: 200px;
+    height: 150px;
+    margin: 1rem;
+    background-color: rgb(240, 240, 240);
+    box-shadow: -8px 8px 10px 1.5px  rgba(58, 58, 58, 0.10);
+    display: grid;
+    place-items: center;
+}
+.partners-list .partner img{
+    height: auto;
+    width: 150px;
 }

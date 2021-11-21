@@ -1,4 +1,12 @@
 @media (max-width: 767px) {
+    /* ABOUT US HEADER */
+    .about-us-header{
+        height: 200px;
+        background-position-y: 0px;
+    }
+    .about-us-header h1{
+        font-size: 24px;
+    }
 
     /* PARTNERS */
     .partners-container{

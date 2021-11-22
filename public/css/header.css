@@ -79,7 +79,7 @@
     background-color: #F0502B;
     left:0;
     animation-name: linksHoverAnimation;
-    animation-duration: .25s;
+    animation-duration: 3.5s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }

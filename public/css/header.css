@@ -64,7 +64,7 @@
 @keyframes linksHoverAnimation{
     from {
         opacity: 0;
-        bottom: -12.5px;
+        bottom: -1.25rem;
     }
     to{
         opacity: 1;
@@ -79,7 +79,7 @@
     background-color: #F0502B;
     left:0;
     animation-name: linksHoverAnimation;
-    animation-duration: 3.5s;
+    animation-duration: .35s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }

@@ -53,7 +53,7 @@
         font-size: 24px;
     }
     .partners-container .heading .underline{
-        margin-top: .75rem;
+        margin-top: 1.75rem;
         height: 2.5px;
         width: 160px;
     }
@@ -177,7 +177,7 @@
         font-size: 28px;
         padding-bottom: 2.5rem;
     }
-    .information h1::after{ /* line below about us title */
+    .information h1::after{
         width: 105px;
         top: 4.25rem;
         margin: 0 .8rem;

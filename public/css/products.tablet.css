@@ -1,0 +1,106 @@
+
+@media (max-width: 1000px) and (min-width: 768px) {
+    /* PRODUCTS HEADER */
+    .products-header{
+        height: 250px;
+        background-position-y: -150px;
+    }
+    .products-header h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
+
+    /* PRODUCTS */
+    .products-containers section{
+        height: 42.5vh;
+    }
+
+    /* PRODUCT INFORMATION */
+    .product-information > *{
+        padding: .6rem;
+        margin-left: 2.5rem;
+    }
+    .product-information h1{
+        font-size: 24px;
+        padding-bottom: 1.75rem;
+    }
+    .product-information h1::after{ 
+        top: 3.25rem;
+        margin: 0 .6rem;
+    }
+    .product-information p {
+        font-size: 14px;
+        width: 40ch;
+    }
+
+    /* PRODUCT IMAGE CONTAINER */
+    .product-pic-container img{
+        width: 50%;
+        height: auto;
+    }
+    .mothers-logo{ /* Mothers logo */
+        width: 35% !important;
+    }
+}
+@media (max-width: 1200px) and (min-width: 1000px){
+    /* PRODUCTS HEADER */
+    .products-header{
+        background-position-y: -250px;
+    }
+    .products-header h1{
+        font-size: 26px;
+        padding-bottom: 2.25rem;
+    }
+
+    /* PRODUCTS */
+    .products-containers section{
+        height: 40vh;
+    }
+
+    /* PRODUCT INFORMATION */
+    .product-information > *{
+        padding: .5rem;
+        margin-left: 2.5rem;
+    }
+    .product-information h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
+    .product-information h1::after{ 
+        top: 3.5rem;
+        margin: 0 .6rem;
+    }
+    .product-information p {
+        font-size: 15px;
+        width: 51ch;
+    }
+}
+@media (max-width: 1450px) and (min-width: 1200px){
+    /* PRODUCTS HEADER */
+    .products-header{
+        background-position-y: -300px;
+    }
+
+    /* PRODUCTS */
+    .products-containers section{
+        height: 45vh;
+    }
+
+    /* PRODUCT INFORMATION */
+    .product-information > *{
+        padding: .75rem;
+    }
+    .product-information h1{
+        font-size: 28px;
+        padding-bottom: 2.5rem;
+    }
+    .product-information h1::after{ 
+        top: 4.25rem;
+        margin: 0 .8rem;
+    }
+
+    .product-information p {
+        font-size: 15px;
+        width: 61ch;
+    }
+}

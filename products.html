@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- DO NOT change the order of the css files below -->
-    <link rel="stylesheet" href="./public/css/about.css" />
-    <link rel="stylesheet" href="./public/css/about.tablet.css" />
-    <link rel="stylesheet" href="./public/css/about.mobile.css" />
+    <link rel="stylesheet" href="./public/css/products.css" />
+    <link rel="stylesheet" href="./public/css/products.mobile.css" />
+    <link rel="stylesheet" href="./public/css/products.tablet.css" />
     <link rel="stylesheet" href="./public/css/header.css" />
     <link rel="stylesheet" href="./public/css/footer.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <title>About Us | Q Design Auto Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Products | Q Design Auto Center</title>
 </head>
 <body>
     <div class="container">
@@ -49,7 +48,7 @@
                 </a>
                 <ul class="links row">
                     <li><a href="/">home</a></li>
-                    <li class="active-link"><a href="./about.html">About us</a></li>
+                    <li><a href="./about.html">About us</a></li>
                     <li class="services">
                         <div class="services-button row">
                             <a href="">Services</a>
@@ -71,7 +70,7 @@
                             <li><a href="">Car Restoration</a></li>
                         </ul>
                     </li>
-                    <li class="below-services"><a href="./products.html">Products</a></li>
+                    <li class="below-services active-link"><a href="./products.html">Products</a></li>
                     <li><a href="">Gallery</a></li>
                     <li><a href="">Testimonials</a></li>
                     <li><a href="">Contact us</a></li>
@@ -90,126 +89,115 @@
                 </div>
             </nav>
         </header>
-
-        <!-- BACKGROUND IMAGE HEADER -->
-        <header class="about-us-header">
-            <div class="about-us-heading-container">
-                <h1>About<br>Q Design Auto</h1>
+       
+        <header class="products-header">
+            <div class="products-header-container">
+                <h1>Our Products</h1>
             </div>
         </header>
 
-        <!-- ABOUT US INFORMATION SECTION WITH IMAGE -->
-        <main class="about-us-information row">
-            <article class="information column">
-                <h1>About Q Design</h1>
-                <p>
-                    Q Design Auto Center is one of the primary car care centers in Kuwait. Q Design was established in 2009. 
-                    Located at Al Rai area behind Safat Al Ghanim.
-                </p>
-                <p>
-                    Q Design is equipped with more than 85 professionals that 
-                    serve clients with various services, such as car detailing and restoration, car protection, window tinting ,
-                    car wrapping and paint-less dent repair. With an area of 1500 square meters. 
-                </p>
-                <p>
-                     With 3 branches in Kuwait we are able 
-                    to manage and load up to 4500 vehicles during a whole season. Q Design Auto Center seeks to allocate the latest car 
-                    care services with skilled employees by many industry leaders in the world. We strive to take dealership in order to 
-                    distribute the greatest and newest products and services.
-                </p>
-            </article>
+        <!-- PRODUCTS  -->
+        <main class="products-containers column">
+            <!-- PARTNERSHIP -->
+            <section class="product row">
+                <article class="product-information column">
+                    <h1>Partnership</h1>
+                    <p>
+                        Our experience with the field left us with the aim to reach prefection. This reason made us take it a step
+                        further and be proud to announce our partnership with Mothers and to be the exclusive distrbutor in Kuwait. 
+                    </p>
+                </article>
+                <div class="product-pic-container">
+                    <img src="./public/images/mothers_logo.png" alt=""  class="mothers-logo">
+                </div>
+            </section>
 
-            <section class="about-us-information-pic-container">
-                <div class="about-us-information-pic">
-                    <img src="./public/images/about_us.jpg" alt="">
+            <!-- CALIFORNIA GOLD -->
+            <section class="product dark-container-for-mobile row">
+                <div class="product-pic-container">
+                    <img src="./public/images/mother-pic.png" alt="">
+                </div>
+                <article class="product-information column">
+                    <h1>California Gold</h1>
+                    <p>
+                        Nestled within the Classic line of Mothers® car care products lies California Gold® — 
+                        designed exclusively for high-end paint care. Deep rich carnauba waxes, world-class instant detailer 
+                        and our legendary clay bar. Whatever your paint care needs, Mothers® has the answer.  
+                    </p>
+                </article>
+            </section>
+
+            <!-- PROFESSIONAL -->
+            <section class="product row">
+                <article class="product-information column">
+                    <h1>professional</h1>
+                    <p>
+                        Progressive, quality-crafted formulas with a touch of traditional, old-school charm. 
+                        No matter what challenge lies ahead, Mothers® car care products have a product to get the job done right. 
+                    </p>
+                </article>
+                <div class="product-pic-container">
+                    <img src="./public/images/professional.png" alt="">
+                </div>
+            </section>
+            
+            <!-- POWER PRODUCTS -->
+            <section class="product dark-container-for-mobile row">
+                <div class="product-pic-container">
+                    <img src="./public/images/power.png" alt="">
+                </div>
+                <article class="product-information column">
+                    <h1>Power Products</h1>
+                    <p>
+                        The Mothers® Power Line is specially designed for consumer machine applications. 
+                        These innovative products and tools are user-friendly, and allow you to achieve professional results in your own garage. 
+                    </p>
+                </article>
+            </section>
+
+            <!-- REFLECTION -->
+            <section class="product row">
+                <article class="product-information column">
+                    <h1>reflection</h1>
+                    <p>
+                        A refined blend of high-tech and high-class, Mothers® Reflections® is for discerning automotive enthusiasts. 
+                        Reflections® provides an uncompromising finish for your paint, tires and leather interior.
+                    </p>
+                </article>
+                <div class="product-pic-container">
+                    <img src="./public/images/reflection.png" alt="">
+                </div>
+            </section>
+
+            <!-- MARINE -->
+            <section class="product dark-container-for-mobile row">
+                <div class="product-pic-container">
+                    <img src="./public/images/marine.png" alt="">
+                </div>
+                <article class="product-information column">
+                    <h1>Marine</h1>
+                    <p>
+                        Life on the water can be extremely difficult. Salt spray, relentless sun and waterborne minerals 
+                        all take their toll on your vessel’s appearance. Regular maintenance with quality Mothers® marine-care products 
+                        is an essential part of keeping your vessel looking like new.
+                    </p>
+                </article>
+            </section>
+
+            <!-- ACCESSORIES -->
+            <section class="product row">
+                <article class="product-information column">
+                    <h1>accessories</h1>
+                    <p>
+                        Our experience with the field left us with the aim to reach prefection. This reason made us take it a step
+                        further and be proud to announce our partnership with Mothers and to be the exclusive distrbutor in Kuwait. 
+                    </p>
+                </article>
+                <div class="product-pic-container">
+                    <img src="./public/images/access.png" alt="">
                 </div>
             </section>
         </main>
-
-        <!-- "WHO ARE WE" CONTAINERS -->
-        <section class="who-are-we">
-            <div class="dark who-are-we-1 column">
-                <div class="title row">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Vision Statement</h3>
-                </div>
-                <article class="description">
-                    We are the worlds leading and fast growing restoration industry in car care. 
-                    Q Design provides and delivers superior products and services of exceptional 
-                    values to its customers. We are recognized as a place of ‘first class’ to customers. 
-                    Our growth is fueled by a tremendous need for quality and affordability.
-                </article>
-            </div>
-            <div class="light who-are-we-2 column">
-                <div class="title row">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3 class="light">Future Plans</h3>
-                </div>
-                <article class="description">
-                    Q Design aim to expand to five more branches outside Kuwait—in Qatar, Dubai and 
-                    Los Angeles in order to continue innovation. We also strive to add more services 
-                    to customers in order to expand our marketing and advertising aspect in nearby 
-                    areas and cities.
-                </article>
-            </div>
-            <div class="light who-are-we-3 column">
-                <div class="title row">
-                    <i class="fas fa-magic"></i>
-                    <h3 class="light">Uniqueness</h3>
-                </div>
-                <article class="description">
-                    Q Design is spotted as a second, and only, innovator in making car care products 
-                    manufactured in Kuwait. We are accountable to people in Kuwait and we value and 
-                    recognize employees’ contributions and talents. Regarding efficiency, we attempt 
-                    to identify the best way to deliver high quality services with the most efficient 
-                    use of own resources. Q Design make informed decisions that make a difference at 
-                    the industry, and, also, value new ideas and concepts—which are fundamental to the 
-                    successful delivery of services to customers.
-                </article>
-            </div>
-            <div class="dark who-are-we-4 column">
-                <div class="title row">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Supplier / Distributor</h3>
-                </div>
-                <article class="description">
-                    Q Design is the supplier and distributor of many brands in the automotive car 
-                    industry. PBMG is the owner of many detailing varieties, such as pinnacle-black 
-                    label and black fire. We are also the distributor of flex and ruppes, Luxo and 
-                    Pentagon for window films, Nano Fusion and Xpel, for car protection films and 
-                    Avery film fpr wrapping, Mayvinci Coating, Mothers, and many more.
-                </article>
-            </div>
-        </section>
-
-        <!-- PARTNERS -->
-        <section class="partners-container column">
-            <div class="heading column">
-                <h1>OUR PARTNERS</h1>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="partners-list row">
-                <div class="partner">
-                    <img src="./public/images/nano_fusion.png" alt="Nano-fusion paint protection film">
-                </div>
-                <div class="partner">
-                    <img src="./public/images/mothers.png" alt="Nano-fusion paint protection film">
-                </div>
-                <div class="partner">
-                    <img src="./public/images/pbmg.png" alt="Nano-fusion paint protection film">
-                </div>
-                <div class="partner">
-                    <img src="./public/images/luxo.png" alt="Nano-fusion paint protection film">
-                </div>
-                <div class="partner">
-                    <img src="./public/images/autogeek.png" alt="Nano-fusion paint protection film">
-                </div>
-                <div class="partner">
-                    <img src="./public/images/avery.png" alt="Nano-fusion paint protection film">
-                </div>
-            </div>
-        </section>
 
         <!-- FOOTER -->
         <footer class="column">
@@ -234,8 +222,8 @@
                 <nav class="quick-links column">
                     <h3>Quick links</h3>
                     <ul class="column">
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Products</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./products.html">Products</a></li>
                         <li><a href="">Gallery</a></li>
                         <li><a href="">Testimonials</a></li>
                     </ul>
@@ -284,7 +272,6 @@
             </section>
         </footer>
     </div>
-
     <!-- FONT AWESOME CDN -->
     <script src="https://kit.fontawesome.com/f8a4cbb026.js" crossorigin="anonymous"></script>
     <!-- JQUERY CDN -->
@@ -293,6 +280,5 @@
     </div>
     <!-- JavaScript -->
     <script src="./public/js/header.js"></script>
-    <script src="./public/js/about.js"></script>
 </body>
 </html>

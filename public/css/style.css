@@ -351,9 +351,9 @@ body{
     content: '';
     height: 3px;
     width: 120px;
-    background-color: #131313;
+    background-color: #ff6340;
     position: absolute;
-    top: 5rem;
+    top: 5.25rem;
     left: 0rem;
     margin: 0 1rem;
 }
@@ -443,9 +443,9 @@ body{
     content: '';
     height: 3px;
     width: 120px;
-    background-color: #131313;
+    background-color: #ff6340;
     position: absolute;
-    top: 5rem;
+    top: 5.25rem;
     left: 0rem;
     margin: 0 1rem;
 }

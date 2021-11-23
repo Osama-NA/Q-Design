@@ -16,6 +16,9 @@
     /* PRODUCTS */
     .products-containers section{
         flex-direction: column;
+        min-height: 50vh;
+        height: auto;
+        padding: .25rem 0;
     }
     .product-pic-container{
         display: flex;

@@ -113,12 +113,26 @@ body{
 .product-pic-container{
     display: grid;
     place-items: center;
-    /* background-color: rgb(32, 32, 32); */
+}
+
+/* PRODUCT IMAGE FADE-IN ANIMATION */
+@keyframes productImageFadeInAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 .product-pic-container img{
     width: 50%;
     height: auto;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 .mothers-logo{ /* Mothers logo */
     width: 35% !important;
+    animation-name: productImageFadeInAnimation;
 }

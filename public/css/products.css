@@ -67,16 +67,56 @@ body{
     align-items: center;
     border-top: .75px solid #F0502B;
 }
+.products-containers section:nth-child(1){
+    height: 61vh;
+}
+.no-border-top{
+    border-top: none !important;
+}
 .product-information, .product-pic-container{
     width: 50%;
     height: 100%;
 }
 
 /* PRODUCT INFORMATION */
+@keyframes productInfoSlideInFromRightAnimation {
+    from{
+        opacity: 0;
+        right: -10rem;
+    }
+    to{
+        opacity: 1;
+        right: 0;
+    }
+}
+@keyframes productInfoSlideInFromLeftAnimation {
+    from{
+        opacity: 0;
+        left: -10rem;
+    }
+    to{
+        opacity: 1;
+        left: 0;
+    }
+}
 .product-information{
     color: rgb(211, 211, 211);
     justify-content: center;
     background-color: rgb(32, 32, 32);
+}
+.products-containers .partner article{
+    background-color: transparent;
+}
+.products-containers article h1, .products-containers article p{
+    position: relative;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 0, 0.3, 1.04);
+}
+.products-containers .partner article:nth-child(1){
+    animation-name: none;
+}
+.products-containers .partner article h1, .products-containers .partner article p{
+    color: rgb(32, 32, 32);
 }
 .product-information > *{
     padding: 1rem;
@@ -94,10 +134,10 @@ body{
 .product-information h1::after{ 
     content: '';
     height: 3px;
-    width: 120px;
+    width: 120px;;
     background-color: #ff6340;
     position: absolute;
-    top: 5rem;
+    top: 5.2rem;
     left: 0rem;
     margin: 0 1rem;
 }
@@ -108,11 +148,128 @@ body{
     color: rgb(211, 211, 211);
     letter-spacing: .5px;
 }
+/* CONTACT BUTTON */
+@keyframes buttonHoverAnimation{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -8px;
+    }
+}
+@keyframes buttonHoverAnimationEnd{
+    0%{
+        top: -8px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.contact-buttons .number{
+    border: 1.5px solid #131313;
+    background-color: #131313;
+}
+.contact-buttons .number i{
+    padding-right: .5rem;
+}
+.contact-buttons .quote{
+    text-transform: uppercase;
+    color: #F0502B;
+    border: 1.5px solid #F0502B;
+    margin-left: 1rem;
+}
+.contact-buttons .quote, .contact-buttons .number{
+    width: 225px;
+}
+.contact-buttons .number:hover{
+    border: 1.5px solid #F0502B;
+    background-color: #F0502B;
+}
+.contact-buttons .quote:hover{
+    color: white;
+    background-color: #F0502B;
+}
+.contact-buttons a {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: .75rem 1.2rem;
+    letter-spacing: 1.5px;
+    animation-name: buttonHoverAnimationEnd;
+}
+
+/* used in services section buttons and slideshow footer buttons */
+.links-hover-animation{
+    position: relative;
+    transition: all .3s ease;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.links-hover-animation:hover{
+    animation-name: buttonHoverAnimation;
+}
+
+ /* slider footer buttons animations */
+@keyframes leftToRightButtonAnimation{
+    0%{
+        opacity: 0;
+        left: -10rem;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+#leftToRight{
+    position: relative;
+    animation-name: leftToRightButtonAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes topToBottomButtonAnimation{
+    0%{
+        opacity: 0;
+        top: -5rem;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+#topToBottom{
+    opacity: 0;
+    position: relative;
+    animation-name: topToBottomButtonAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
 
 /* PRODUCT IMAGE CONTAINER */
 .product-pic-container{
     display: grid;
     place-items: center;
+    background-color: #ffffff52;
+}
+@keyframes partnerLogoRotateAnimation{
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+.product-1{
+    animation-name: partnerLogoRotateAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    background-color: transparent;
 }
 
 /* PRODUCT IMAGE FADE-IN ANIMATION */
@@ -129,7 +286,7 @@ body{
     height: auto;
     opacity: 0;
     animation-fill-mode: forwards;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
 }
 .mothers-logo{ /* Mothers logo */

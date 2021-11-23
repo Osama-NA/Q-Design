@@ -42,6 +42,17 @@
         font-size: 12px;
     }
 
+    .contact-buttons a {
+        font-size: 10px;
+        padding: .5rem .8rem;
+    }
+    .contact-buttons .number i{
+        padding-right: .2rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 150px;
+    }
+
     /* PARTNERS */
     .partners-container{
         padding: 1.75rem 0;

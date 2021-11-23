@@ -11,7 +11,7 @@
     }
 
     /* PRODUCTS */
-    .products-containers section{
+    .products-containers section, .products-containers section:nth-child(1){
         height: 42.5vh;
     }
 
@@ -41,6 +41,24 @@
     .mothers-logo{ /* Mothers logo */
         width: 35% !important;
     }
+
+    .contact-buttons a {
+        font-size: 10px;
+        padding: .6rem 1rem;
+    }
+    .contact-buttons .number{
+        border: 1.5px solid #131313;
+        background-color: #131313;
+    }
+    .contact-buttons .number i{
+        padding-right: .2rem;
+    }
+    .contact-buttons .quote{
+        margin-left: .6rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 175px;
+    }
 }
 @media (max-width: 1200px) and (min-width: 1000px){
     /* PRODUCTS HEADER */
@@ -54,7 +72,10 @@
 
     /* PRODUCTS */
     .products-containers section{
-        height: 40vh;
+        height: 32.5vh;
+    }
+    .products-containers section:nth-child(1){
+        height: 37.5vh;
     }
 
     /* PRODUCT INFORMATION */
@@ -74,6 +95,20 @@
         font-size: 15px;
         width: 51ch;
     }
+
+    .contact-buttons a {
+        font-size: 14px;
+        padding: .7rem 1rem;
+    }
+    .contact-buttons .number i{
+        padding-right: .3rem;
+    }
+    .contact-buttons .quote{
+        margin-left: .8rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 200px;
+    }
 }
 @media (max-width: 1450px) and (min-width: 1200px){
     /* PRODUCTS HEADER */
@@ -82,8 +117,11 @@
     }
 
     /* PRODUCTS */
-    .products-containers section{
+    .products-containers section, .products-containers section:nth-child(1){
         height: 45vh;
+    }
+    .products-containers section:nth-child(1){
+        height: 57.5vh;
     }
 
     /* PRODUCT INFORMATION */
@@ -102,5 +140,18 @@
     .product-information p {
         font-size: 15px;
         width: 61ch;
+    }
+
+    .contact-buttons a {
+        font-size: 14px;
+    }
+    .contact-buttons .number i{
+        padding-right: .4rem;
+    }
+    .contact-buttons .quote{
+        margin-left: 1rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 210px;
     }
 }

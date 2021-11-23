@@ -1,4 +1,5 @@
 @media (max-width: 767px) {
+
     /* PRODUCTS HEADER */
     .products-header{
         height: 225px;
@@ -20,11 +21,19 @@
         height: auto;
         padding: .25rem 0;
     }
+    .products-containers section:nth-child(1){
+        height: 45vh;
+        min-height: 45vh;
+    }
     .product-pic-container{
         display: flex;
         align-items: flex-start;
         justify-content: center;
         padding-top: 1rem;
+        background-color: #ffffff00;
+    }
+    .product-1{
+        display: none;
     }
     .product-information{
         justify-content: center;
@@ -62,6 +71,18 @@
     }
     .mothers-logo{ /* Mothers logo */
         width: 50% !important;
+    }
+
+    .contact-buttons a {
+        margin-top: 1rem;
+        font-size: 10px;
+        padding: .5rem .8rem;
+    }
+    .contact-buttons .number i{
+        padding-right: .2rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 150px;
     }
 
     /* USED FOR MOBILE ONLY TO GIVE CONTAINERS DARK BACKGROUND */

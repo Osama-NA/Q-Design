@@ -133,6 +133,105 @@ body{
     width: 100%;
     height: auto;
 }
+/* CONTACT BUTTON */
+@keyframes buttonHoverAnimation{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -8px;
+    }
+}
+@keyframes buttonHoverAnimationEnd{
+    0%{
+        top: -8px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.contact-buttons .number{
+    border: 1.5px solid #131313;
+    background-color: #131313;
+}
+.contact-buttons .number i{
+    padding-right: .5rem;
+}
+.contact-buttons .quote{
+    text-transform: uppercase;
+    color: #F0502B;
+    border: 1.5px solid #F0502B;
+    margin-left: 1rem;
+}
+.contact-buttons .quote, .contact-buttons .number{
+    width: 225px;
+}
+.contact-buttons .number:hover{
+    border: 1.5px solid #F0502B;
+    background-color: #F0502B;
+}
+.contact-buttons .quote:hover{
+    color: white;
+    background-color: #F0502B;
+}
+.contact-buttons a {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: .75rem 1.2rem;
+    letter-spacing: 1.5px;
+    animation-name: buttonHoverAnimationEnd;
+}
+
+/* used in services section buttons and slideshow footer buttons */
+.links-hover-animation{
+    position: relative;
+    transition: all .3s ease;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.links-hover-animation:hover{
+    animation-name: buttonHoverAnimation;
+}
+
+ /* slider footer buttons animations */
+@keyframes leftToRightButtonAnimation{
+    0%{
+        opacity: 0;
+        left: -10rem;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes topToBottomButtonAnimation{
+    0%{
+        opacity: 0;
+        top: -5rem;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+#leftToRight, #topToBottom{
+    position: relative;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+#leftToRight{
+    animation-name: leftToRightButtonAnimation;
+}
+#topToBottom{
+    position: relative;
+    animation-name: topToBottomButtonAnimation;
+}
 
 /* WHO ARE WE */
 

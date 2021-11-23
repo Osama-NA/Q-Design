@@ -1,7 +1,11 @@
 // VARIABLES
+const contactNumberButton = document.querySelector('.contact-buttons .number');
+const contactQuoteButton = document.querySelector('.contact-buttons .quote');
 
 const className = '.who-are-we';
 const container = 'aboutUsContainer';
+
+let firstScrollOnContact = true;
 
 
 // FUNCTIONS
@@ -51,8 +55,41 @@ const partnersContainersAnimation = () => {
     }
 }
 
+// this function adds animations to the contact buttons after scrolling, 
+// then removes the animations 2 seconds later to add on hover animations
+const contactButtonsAnimationOnScroll = () => {
+    if (isMobile() || isTablet()) {
+        if (scrollTopValue() > -1) {
+            contactButtonsAnimation();
+            return;
+        }
+    }
+    if (scrollTopValue() > 25) {
+        contactButtonsAnimation();
+    }
+}
+const contactButtonsAnimation = () => {
+    if (firstScrollOnContact) {
+        firstScrollOnContact = false;
+        
+        contactNumberButton.setAttribute('id', 'leftToRight');
+        contactQuoteButton.setAttribute('id', 'topToBottom');
+
+        setTimeout(() => {
+            contactNumberButton.removeAttribute('id');
+            contactQuoteButton.removeAttribute('id');
+            contactNumberButton.classList.add('links-hover-animation');
+            contactQuoteButton.classList.add('links-hover-animation');
+        }, 2000);
+    }
+}
+
 // EVENT LISTENERS
 $(window).scroll(() => {
     whoAreWeContainersAnimation();
     partnersContainersAnimation();
+    contactButtonsAnimationOnScroll();
 })
+window.onload = () => {
+    contactButtonsAnimationOnScroll();
+}

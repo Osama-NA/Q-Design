@@ -28,7 +28,7 @@ setTimeout(() => {
     removePopUp(); 
 }, 2000);
 
-// TO ADD ON HOVER ANIMATIONS
+// TO ADD ON HOVER ANIMATIONS TO CONTACT BUTTONS
 setTimeout(() => {
     $(".links .number").addClass("links-hover-animation");
     $(".links .quote").addClass("links-hover-animation");
@@ -295,52 +295,29 @@ const servicesImagesAnimationOnScroll = () => {
     }
 }
 
-// this function adds animations to services buttons after scrolling 1700px, 
-//then removes the animations 2 seconds later to add on hover animations
+// this function adds animations to services buttons after scrolling, 
+// then removes the animations 2 seconds later to add on hover animations
 let firstScrollOnServices = true;
-const servicesAnimationOnScroll = () => {
+const servicesButtonsAnimationOnScroll = () => {
     const scroll = $(window).scrollTop();
 
     if (isMobile()) {
         if (scroll > 950) {
-            servicesAnimation();
+            servicesButtonsAnimation();
             return;
         }
     }
-
     if (isTablet()) {
         if (scroll > 775) {
-            servicesAnimation();
+            servicesButtonsAnimation();
             return;
         }
     }
-
     if (scroll > 1700) {
-        servicesAnimation();
+        servicesButtonsAnimation();
     }
 }
-
-const servicesImagesAnimation = () => {
-    $(services[0]).addClass('services-images-overlay-animation');
-    $(services[0].children[1]).addClass('services-images-animation');
-
-    setTimeout(() => {
-        $(services[1]).addClass('services-images-overlay-animation');
-        $(services[1].children[1]).addClass('services-images-animation');
-    }, 500);
-
-    setTimeout(() => {
-        $(services[2]).addClass('services-images-overlay-animation');
-        $(services[2].children[1]).addClass('services-images-animation');
-    }, 1000);
-
-    setTimeout(() => {
-        $(services[3]).addClass('services-images-overlay-animation');
-        $(services[3].children[1]).addClass('services-images-animation');
-    }, 1500);
-}
-
-const servicesAnimation = () => {
+const servicesButtonsAnimation = () => {
     if (firstScrollOnServices) {
         firstScrollOnServices = false;
 
@@ -354,6 +331,21 @@ const servicesAnimation = () => {
             servicesQuoteButton.classList.add('links-hover-animation');
         }, 2000);
     }
+}
+
+// SERVICES IMAGES CONTAINERS ANIMATIONS
+const servicesImagesAnimation = () => {
+    addServicesAnimationByIndex(0);
+
+    setTimeout(() => addServicesAnimationByIndex(1), 500);
+
+    setTimeout(() => addServicesAnimationByIndex(2), 1000);
+
+    setTimeout(() => addServicesAnimationByIndex(3), 1500);
+}
+const addServicesAnimationByIndex = (i) => {
+    $(services[i]).addClass('services-images-overlay-animation');
+    $(services[i].children[1]).addClass('services-images-animation');
 }
 
 // EVENT LISTENERS
@@ -372,7 +364,7 @@ window.addEventListener('load', () => {
 // functions called on window scroll
 $(window).scroll(() => {
     aboutUsAnimationOnScroll();
-    servicesAnimationOnScroll();
+    servicesButtonsAnimationOnScroll();
     servicesImagesAnimationOnScroll();
 })
 

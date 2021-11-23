@@ -25,6 +25,7 @@
         align-items: flex-start;
         justify-content: center;
         padding-top: 1rem;
+        background-color: #ffffff00;
     }
     .product-information{
         justify-content: center;
@@ -62,6 +63,17 @@
     }
     .mothers-logo{ /* Mothers logo */
         width: 50% !important;
+    }
+
+    .contact-buttons a {
+        font-size: 10px;
+        padding: .5rem .8rem;
+    }
+    .contact-buttons .number i{
+        padding-right: .2rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 150px;
     }
 
     /* USED FOR MOBILE ONLY TO GIVE CONTAINERS DARK BACKGROUND */

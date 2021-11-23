@@ -66,6 +66,24 @@
         height: auto;
         width: 125px;
     }
+
+    .contact-buttons a {
+        font-size: 10px;
+        padding: .6rem 1rem;
+    }
+    .contact-buttons .number{
+        border: 1.5px solid #131313;
+        background-color: #131313;
+    }
+    .contact-buttons .number i{
+        padding-right: .2rem;
+    }
+    .contact-buttons .quote{
+        margin-left: .6rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 175px;
+    }
     
     /* WHO ARE WE */
     .who-are-we{
@@ -133,6 +151,20 @@
         right: -15px;
     }
 
+    .contact-buttons a {
+        font-size: 14px;
+        padding: .7rem 1rem;
+    }
+    .contact-buttons .number i{
+        padding-right: .3rem;
+    }
+    .contact-buttons .quote{
+        margin-left: .8rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 200px;
+    }
+
     /* WHO ARE WE */
     .who-are-we{
         flex-wrap: wrap-reverse;
@@ -191,6 +223,18 @@
     .about-us-information-pic::before{
         bottom: -17.5px;
         right: -17.5px;
+    }
+    .contact-buttons a {
+        font-size: 14px;
+    }
+    .contact-buttons .number i{
+        padding-right: .4rem;
+    }
+    .contact-buttons .quote{
+        margin-left: 1rem;
+    }
+    .contact-buttons .quote, .contact-buttons .number{
+        width: 210px;
     }
 
     /* WHO ARE WE */

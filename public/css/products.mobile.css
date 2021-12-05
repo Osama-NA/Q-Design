@@ -32,9 +32,6 @@
         padding-top: 1rem;
         background-color: #ffffff00;
     }
-    .product-1{
-        display: none;
-    }
     .product-information{
         justify-content: center;
         background-color: transparent;
@@ -74,7 +71,6 @@
     }
 
     .contact-buttons a {
-        margin-top: 1rem;
         font-size: 10px;
         padding: .5rem .8rem;
     }

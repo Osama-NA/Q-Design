@@ -63,7 +63,7 @@ body{
 }
 .contact-us-container > *{
     width: 50%;
-    height: 83.4vh;
+    min-height: 600px;
 }
 .contact-us-info{
     padding-left: 12rem;
@@ -81,17 +81,18 @@ body{
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 3.5px;
-    padding-bottom: .5rem;
-    padding-left: .25rem;
+    padding-bottom: .25rem;
+    padding-left: .175rem;
 }
 .contact-us-info h1::after{
     content: '';
-    height: 3px;
-    width: 90px;
-    background-color: #ff6340;
     position: absolute;
     top: 4rem;
     left: 0rem;
+    height: 3px;
+    width: 90px;
+    margin: 0 .165rem;
+    background-color: #ff6340;
 }
 .contact-us-info article, .contact-us-info p{
     max-width: 50ch;
@@ -100,13 +101,14 @@ body{
     color: rgb(44, 44, 44);
     letter-spacing: .5px;
 }
+.follow-us, .contact-us-info article{
+    margin-bottom: 2rem;
+}
 .follow-us{
     font-size: 16px;
     font-weight: 400;
+    margin-bottom: 1.5rem;
     letter-spacing: 3.5px;
-}
-.follow-us, .contact-us-info article{
-    margin-bottom: 2rem;
 }
 .link-icons a{
     padding-right: 1rem;
@@ -114,13 +116,51 @@ body{
 }
 .contact-us-info a{
     color: rgb(44, 44, 44);
-    padding-bottom: 1rem;
+    padding-bottom: .75rem;
     text-decoration: none;
 }
 .contact-us-info a i{
+    font-size: 14px;
+    padding-top: .15rem;
     padding-right: 1rem;
 }
 .contact-us-info a p{
-    font-weight: 300;
+    font-weight: 400;
     color: rgb(49, 49, 49);
+}
+
+/* FORM */
+.form-container{
+    display: flex;
+    align-items: center;
+}
+.form-container form{
+    width: 400px;
+    min-height: 450px;
+    margin-left: 5rem;
+    background-color: #202020;
+    padding: 2.5rem;
+}
+.form-container form input{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(238, 238, 238);
+    min-height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: #313131;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1.35px solid #ff6947;
+}
+.form-container form input::placeholder{
+    color: rgb(145, 145, 145);
+    font-weight: 300;
+}
+.form-container form .form-group{
+    justify-content: space-between;
+}
+.form-container form .form-group input{
+    width: 47.5%;
 }

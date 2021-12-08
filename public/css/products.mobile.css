@@ -22,8 +22,9 @@
         padding: .25rem 0;
     }
     .products-containers section:nth-child(1){
-        height: 45vh;
+        height: auto;
         min-height: 45vh;
+        padding: 1rem 0;
     }
     .product-pic-container{
         display: flex;

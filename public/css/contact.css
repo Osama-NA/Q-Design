@@ -164,3 +164,46 @@ body{
 .form-container form .form-group input{
     width: 47.5%;
 }
+
+.form-container nav{
+    position: relative;
+    color: rgb(238, 238, 238);
+    font-size: 14px;
+    font-weight: 400;
+}
+.form-container nav .menu-selected {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2.5rem;
+    background-color: #313131;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1.35px solid #ff6947;
+}
+.form-container nav .menu-selected input{
+    min-height: 0;
+    padding: 0;
+    margin-bottom: none;
+    border-bottom: none;
+}
+.form-container nav .menu {
+    width: 100%;
+    position: absolute;
+    top: 2.5rem;
+    color: #313131;
+    background-color: rgb(238, 238, 238);
+}
+.form-container nav .menu li{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-height: 2.25rem;
+    font-weight: 500;
+    padding: 0 1rem;
+    transition: all .5s;
+}
+.form-container nav .menu li:hover{
+    color: rgb(238, 238, 238);
+    background-color: #313131;
+}

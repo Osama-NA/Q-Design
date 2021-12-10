@@ -8,6 +8,8 @@
 
     <!-- DO NOT change the order of the css files below -->
     <link rel="stylesheet" href="./public/css/contact.css" />
+    <link rel="stylesheet" href="./public/css/contact.tablet.css" />
+    <link rel="stylesheet" href="./public/css/contact.mobile.css" />
     <link rel="stylesheet" href="./public/css/header.css" />
     <link rel="stylesheet" href="./public/css/footer.css" />
 
@@ -139,17 +141,17 @@
             <section class="form-container">
                 <form class="column">
                     <div class="form-group row">
-                        <input type="text" placeholder="Full Name" />
-                        <input type="text" placeholder="Phone Number" />
+                        <input type="text" placeholder="Full Name" name="full_name" />
+                        <input type="text" placeholder="Phone Number" name="phone_number" />
                     </div>
-                    
-                    <input type="email" placeholder="Email" />
-                    
-                    <input type="text" placeholder="Vehicle Make & Model" />
+
+                    <input type="email" placeholder="Email" name="email" />
+
+                    <input type="text" placeholder="Vehicle Make & Model" name="vehicle" />
 
                     <nav>
                         <div class="menu-selected row">
-                            <input type="text" value="Paint Protection Film" />
+                            <input type="text" value="Paint Protection Film" name="service" disabled />
                             <i class="fas fa-caret-down"></i>
                         </div>
                         <ul class="menu column">
@@ -158,6 +160,13 @@
                             <li>Caliber Wrap</li>
                         </ul>
                     </nav>
+
+                    <textarea placeholder="Message" name="message"></textarea>
+
+                    <div class="form-buttons row">
+                        <button type="reset" class="clear-btn">Clear Form</button>
+                        <button type="submit" class="send-btn">Send Message</button>
+                    </div>
                 </form>
             </section>
         </main>
@@ -212,6 +221,7 @@
                         <li><a href="">Car Restoration</a></li>
                     </ul>
                 </nav>
+
                 <!-- CONTACTS -->
                 <nav class="contact column">
                     <h3>Contact</h3>
@@ -236,6 +246,13 @@
         </footer>
     </div>
 
+    <!-- EMAILJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_I78m0ESdzgYh9SrO25MbQ");
+        })();
+    </script>
     <!-- FONT AWESOME CDN -->
     <script src="https://kit.fontawesome.com/f8a4cbb026.js" crossorigin="anonymous"></script>
     <!-- JQUERY CDN -->
@@ -244,6 +261,7 @@
     </div>
     <!-- JavaScript -->
     <script src="./public/js/header.js"></script>
+    <script src="./public/js/contact.js"></script>
 </body>
 
 </html>

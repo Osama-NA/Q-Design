@@ -141,7 +141,7 @@ body{
     background-color: #202020;
     padding: 2.5rem;
 }
-.form-container form input{
+.form-container form input, .form-container form textarea{
     width: 100%;
     font-size: 14px;
     font-weight: 400;
@@ -181,13 +181,17 @@ body{
     margin-bottom: 1rem;
     border-bottom: 1.35px solid #ff6947;
 }
+/* to disable previous input styles for dropdown menu input*/
 .form-container nav .menu-selected input{
+    width: auto;
+    cursor: pointer;
     min-height: 0;
     padding: 0;
-    margin-bottom: none;
+    margin-bottom: 0;
     border-bottom: none;
 }
 .form-container nav .menu {
+    display: none;
     width: 100%;
     position: absolute;
     top: 2.5rem;
@@ -195,15 +199,33 @@ body{
     background-color: rgb(238, 238, 238);
 }
 .form-container nav .menu li{
-    cursor: pointer;
     display: flex;
     align-items: center;
     min-height: 2.25rem;
     font-weight: 500;
     padding: 0 1rem;
-    transition: all .5s;
+}
+.form-container nav .menu li, .form-container nav .menu-selected input, .form-container nav .menu-selected{
+    cursor: pointer;
 }
 .form-container nav .menu li:hover{
     color: rgb(238, 238, 238);
     background-color: #313131;
+}
+.form-container form textarea{
+    min-height: 100px;
+    max-height: 100px;
+    max-width: 100%;
+    min-width: 100%;
+    padding: .5rem 1rem;
+    resize: none;
+}
+.form-container form textarea::-webkit-scrollbar-track{
+  background-color: #313131;
+}
+.form-container form textarea::-webkit-scrollbar{
+  width: 3px;
+}
+.form-container form textarea::-webkit-scrollbar-thumb{
+  background-color: #ff6947;
 }

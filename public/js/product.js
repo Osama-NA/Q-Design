@@ -42,6 +42,7 @@ const addProductsImagesAnimations = () => {
     productSixImageAnimation();
     productSevenImageAnimation();
 }
+
 //Functions adding Image fade-in animation to each product on scroll
 const productTwoImageAnimation = () => {
     if(isMobile()) {

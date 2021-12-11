@@ -182,11 +182,10 @@ body{
     margin-bottom: 1rem;
     border-bottom: 1.35px solid #ff6947;
 }
+/* to disable previous input styles for dropdown menu input*/
 .form-container nav .menu-selected input{
     width: auto;
     cursor: pointer;
-    
-    /* to disable previous input styles for dropdown menu input*/
     min-height: 0;
     padding: 0;
     margin-bottom: 0;

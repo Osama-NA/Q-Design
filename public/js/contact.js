@@ -4,6 +4,12 @@ const selectedServiceInput = document.querySelector('.menu-selected input');
 const selectedServiceIcon = document.querySelector('.menu-selected i');
 const servicesMenu = document.querySelector('.menu');
 const services = document.querySelectorAll('.menu li');
+const contactForm = document.querySelector('.form-container form');
+
+// EmailJs ID's
+const serviceID = 'service_pm957rh';
+const templateID = 'template_qqjh6vu';
+const userID = 'user_I78m0ESdzgYh9SrO25MbQ';
 
 let showServicesMenu = true;
 
@@ -29,6 +35,40 @@ const setChosenService = (e) => {
     handleSelectedServiceClick();
 }
 
+const handleContactFormSubmit = (e) => {
+    e.preventDefault();
+    
+    const message = e.target.message.value;
+
+    if (!isMessageValid(message))
+        return;
+
+    sendEmail();
+
+    e.target.reset();
+}
+
+const sendEmail = () => {
+    emailjs.sendForm(
+        serviceID,
+        templateID,
+        contactForm,
+        userID
+    ).then(() => {
+        alert('Email successfully sent.');
+    }, (error) => {
+        alert(error.text);
+    });
+}
+
+// used to not allow useless messages
+const isMessageValid = (message) => {
+    if (message.length < 15) {
+        alert('Please tell us more details.');
+        return false;
+    }
+    return true;
+}
 
 // EVENT LISTENERS
 selectedService.addEventListener('click', handleSelectedServiceClick);
@@ -38,3 +78,5 @@ if(services){
         services[i].addEventListener('click', setChosenService);
     }
 }
+
+contactForm.addEventListener('submit', handleContactFormSubmit);

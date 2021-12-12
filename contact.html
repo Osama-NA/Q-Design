@@ -141,17 +141,17 @@
             <section class="form-container">
                 <form class="column">
                     <div class="form-group row">
-                        <input type="text" placeholder="Full Name" name="full_name" />
-                        <input type="text" placeholder="Phone Number" name="phone_number" />
+                        <input type="text" placeholder="Full Name" name="full_name" required/>
+                        <input type="text" placeholder="Phone Number" name="phone_number" required/>
                     </div>
 
-                    <input type="email" placeholder="Email" name="email" />
+                    <input type="email" placeholder="Email" name="email" required/>
 
-                    <input type="text" placeholder="Vehicle Make & Model" name="vehicle" />
+                    <input type="text" placeholder="Vehicle Make & Model" name="vehicle" required/>
 
                     <nav>
                         <div class="menu-selected row">
-                            <input type="text" value="Paint Protection Film" disabled />
+                            <input type="text" value="Paint Protection Film" disabled/>
                             <i class="fas fa-caret-down"></i>
                         </div>
                         <ul class="menu column">
@@ -161,13 +161,12 @@
                         </ul>
                     </nav>
 
-                    <textarea placeholder="Message" name="message"></textarea>
+                    <textarea placeholder="Message" name="message" required></textarea>
 
                     <div class="form-buttons row">
                         <button type="reset" class="clear-btn">Clear Form</button>
                         <button type="submit" class="send-btn">Send Message</button>
                     </div>
-                    <textarea placeholder="Message"></textarea>
                 </form>
             </section>
         </main>

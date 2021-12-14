@@ -1,0 +1,112 @@
+@media (max-width: 767px) {
+    /* CONTACT US HEADER */
+    .contact-us-header{
+        height: 225px;
+        background-position-y: 0px;
+    }
+    .contact-us-heading-container{
+        align-items: center;
+    }
+    .contact-us-header h1{
+        font-size: 24px;
+        padding-bottom: 0;
+        padding-top: 3.5rem;
+    }
+
+    /* CONTACT US INFORMATION */
+    .contact-us-container{
+        flex-direction: column;
+    }
+    .contact-us-container > *{
+        width: 100%;
+        min-height: 0;
+        padding: 2rem 1rem;
+    }
+    .contact-us-info{
+        padding-left: 1rem;
+    }
+    .contact-us-info h1{
+        font-size: 22px;
+        padding-bottom: 2rem;
+    }
+    .got-a-question{
+        font-size: 12px;
+        padding-bottom: .1rem;
+        padding-left: .125rem;
+    }
+    .contact-us-info h1::after{
+        height: 2.5px;
+        top: 2.75rem;
+        margin: 0 .2rem;
+    }
+    .contact-us-info article, .contact-us-info p{
+        max-width: 50ch;
+        font-size: 14px;
+    }
+    .follow-us, .contact-us-info article{
+        margin-bottom: 1rem;
+    }
+    .follow-us{
+        font-size: 12px;
+        margin-bottom: 1rem;
+    }
+    .link-icons a{
+        padding-right: .5rem;
+        margin-bottom: .25rem;
+    }
+    .contact-us-info a{
+        padding-bottom: .5rem;
+    }
+    .contact-us-info a i{
+        font-size: 13px;
+        padding-right: .75rem;
+    }
+
+    /* FORM */
+    .form-container{
+        padding-top: 0;
+    }
+    .form-container form{
+        width: 100%;
+        min-height: 0;
+        margin-left: 0;
+        padding: 1.75rem 1rem;
+    }
+    .form-container form input, .form-container form textarea{
+        font-size: 12px;
+        min-height: 2.25rem;
+        padding: 0 .5rem;
+        margin-bottom: .65rem;
+    }
+    .form-container form .form-group input{
+        width: 48.5%;
+    }
+    .form-container nav{
+        font-size: 12px;
+    }
+    .form-container nav .menu-selected {
+        min-height: 2.25rem;
+        padding: 0 .5rem;
+        margin-bottom: .65rem;
+    }
+    .form-container nav .menu {
+        top: 2rem;
+    }
+    .form-container nav .menu li{
+        min-height: 2rem;
+        padding: 0 .5rem;
+    }
+    .form-container form textarea{
+        min-height: 75px;
+        max-height: 75px;
+        padding: .25rem .5rem;
+    }
+    .form-buttons{
+        padding-top: 1rem;
+    }
+    .form-buttons .clear-btn, .form-buttons .send-btn{
+        height: 32.5px;
+        font-size: 10px;
+        padding: .25rem .5rem;
+    }
+}

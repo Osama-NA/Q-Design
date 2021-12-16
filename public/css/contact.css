@@ -66,7 +66,7 @@ body{
     min-height: 600px;
 }
 .contact-us-info{
-    padding-left: 12rem;
+    padding-left: 16rem;
     justify-content: center;
 }
 .contact-us-info h1{
@@ -87,7 +87,7 @@ body{
 .contact-us-info h1::after{
     content: '';
     position: absolute;
-    top: 4rem;
+    top: 3.55rem;
     left: 0rem;
     height: 3px;
     width: 90px;
@@ -132,12 +132,12 @@ body{
 /* FORM */
 .form-container{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .form-container form{
     width: 400px;
     min-height: 450px;
-    margin-left: 5rem;
     background-color: #202020;
     padding: 2.5rem;
 }

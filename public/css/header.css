@@ -234,7 +234,7 @@
         min-height: 92.5vh;
         height: 100%;
         padding-top: 2rem;
-        background-color: #131313;
+        background-color: rgb(32, 32, 32);
         animation-name: openMenuAnimation;
         animation-duration: .5s;
         animation-fill-mode: forwards;

@@ -1,9 +1,234 @@
 @media (max-width: 1000px) and (min-width: 768px) {
-    
+    /* CONTACT US HEADER */
+    .contact-us-header{
+        height: 250px;
+        background-position-y: -150px;
+    }
+    .contact-us-header h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
+
+    /* CONTACT US INFORMATION */
+    .contact-us-container > *{
+        min-height: 500px;
+    }
+    .contact-us-info{
+        padding-left: 4rem;
+    }
+    .contact-us-info h1{
+        font-size: 24px;
+        padding-bottom: 1.75rem;
+    }
+    .contact-us-info h1::after{
+        top: 2.55rem;
+        height: 2.5px;
+        width: 85px;
+    }
+    .got-a-question{
+        font-size: 11px;
+    }
+    .contact-us-info article, .contact-us-info p{
+        max-width: 40ch;
+        font-size: 13px;
+    }
+    .follow-us, .contact-us-info article{
+        margin-bottom: 1.4rem;
+    }
+    .follow-us{
+        font-size: 11px;
+        margin-bottom: .5rem;
+    }
+    .link-icons a{
+        padding-right: .4rem;
+        margin-bottom: 0;
+    }
+    .contact-us-info a{
+        padding-bottom: .75rem;
+    }
+    .contact-us-info a i{
+        font-size: 11px;
+        padding-top: .15rem;
+    }
+
+    /* FORM */
+    .form-container form{
+        width: 325px;
+        min-height: 325px;
+        padding: 1.8rem;
+    }
+    .form-container form input, .form-container form textarea{
+        font-size: 10px;
+        min-height: 2rem;
+        padding: 0 .6rem;
+        margin-bottom: .6rem;
+    }
+    .form-container form .form-group input{
+        width: 48.25%;
+    }
+    .form-container nav{
+        font-size: 10px;
+    }
+    .form-container nav .menu-selected {
+        min-height: 2rem;
+        padding: 0 .6rem;
+        margin-bottom: .6rem;
+    }
+    .form-container nav .menu {
+        top: 2rem;
+    }
+    .form-container nav .menu li{
+        min-height: 2rem;
+        padding: 0 .6rem;
+    }
+    .form-container form textarea{
+        min-height: 70px;
+        max-height: 70px;
+        padding: .4rem .6rem;
+    }
+    .form-buttons{
+        padding-top: 1rem;
+    }
+    .form-buttons .clear-btn, .form-buttons .send-btn{
+        height: 30px;
+        font-size: 9px;
+        padding: .4rem .6rem;
+    }
 }
 @media (max-width: 1200px) and (min-width: 1000px){
-    
+    /* CONTACT US HEADER */
+    .contact-us-header{
+        background-position-y: -250px;
+    }
+    .contact-us-header h1{
+        font-size: 26px;
+        padding-bottom: 2.25rem;
+    }
+
+    /* CONTACT US INFORMATION */
+    .contact-us-container > *{
+        min-height: 550px;
+    }
+    .contact-us-info{
+        padding-left: 6rem;
+    }
+    .contact-us-info h1{
+        font-size: 26px;
+        padding-bottom: 2rem;
+    }
+    .got-a-question{
+        font-size: 13px;
+    }
+    .contact-us-info h1::after{
+        top: 2.75rem;
+        height: 2.75px;
+        width: 85px;
+    }
+    .contact-us-info article, .contact-us-info p{
+        font-size: 14px;
+    }
+    .follow-us, .contact-us-info article{
+        margin-bottom: 1.6rem;
+    }
+    .follow-us{
+        font-size: 13px;
+        margin-bottom: .8rem;
+    }
+    .link-icons a{
+        padding-right: .5rem;
+        margin-bottom: .2rem;
+    }
+    .contact-us-info a{
+        padding-bottom: .75rem;
+    }
+    .contact-us-info a i{
+        font-size: 13px;
+        padding-top: .2rem;
+    }
+
+    /* FORM */
+    .form-container form{
+        width: 375px;
+        min-height: 400px;
+        padding: 2.25rem;
+    }
+    .form-container form input, .form-container form textarea{
+        font-size: 12px;
+        min-height: 2.25rem;
+        padding: 0 .8rem;
+        margin-bottom: .8rem;
+    }
+    .form-container form .form-group input{
+        width: 48%;
+    }
+    .form-container nav{
+        font-size: 12px;
+    }
+    .form-container nav .menu-selected {
+        min-height: 2.25rem;
+        padding: 0 .8rem;
+        margin-bottom: .8rem;
+    }
+    .form-container nav .menu {
+        top: 2.25rem;
+    }
+    .form-container nav .menu li{
+        min-height: 2.25rem;
+        padding: 0 .8rem;
+    }
+    .form-container form textarea{
+        min-height: 90px;
+        max-height: 90px;
+        padding: .4rem .8rem;
+    }
+    .form-buttons{
+        padding-top: 1.15rem;
+    }
+    .form-buttons .clear-btn, .form-buttons .send-btn{
+        height: 32.5px;
+        font-size: 11px;
+        padding: .4rem .8rem;
+    }
 }
 @media (max-width: 1450px) and (min-width: 1200px){
-    
+    /* CONTACT US HEADER */
+    .contact-us-header{
+        background-position-y: -300px;
+    }
+
+    /* CONTACT US INFORMATION */
+    .contact-us-info{
+        padding-left: 8rem;
+    }
+    .contact-us-info h1{
+        font-size: 28px;
+        padding-bottom: 2.5rem;
+    }
+    .contact-us-info h1::after{
+        top: 3.1rem;
+    }
+    .got-a-question{
+        font-size: 14px;
+    }
+    .contact-us-info article, .contact-us-info p{
+        font-size: 15px;
+    }
+    .follow-us, .contact-us-info article{
+        margin-bottom: 1.8rem;
+    }
+    .follow-us{
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+    .link-icons a{
+        padding-right: .5rem;
+    }
+    .contact-us-info a{
+        padding-bottom: .75rem;
+    }
+    .contact-us-info a i{
+        font-size: 13px;
+        padding-top: .2rem;
+        padding-right: 1.2rem;
+    }
 }

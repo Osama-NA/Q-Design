@@ -274,7 +274,6 @@ const aboutUsAnimationOnScroll = () => {
 // animation for home video 
 const videoAnimationOnScroll = () => {
     const scroll = $(window).scrollTop();
-    console.log(scroll)
 
     if (isMobile()) {
         if (scroll > 514) {
@@ -298,12 +297,8 @@ const videoAnimation = () => {
     $(".home-video").addClass('video-animation');
 }
 
-
-
-
 // this function adds animations to services images after scrolling 1265px, 
 // services images are animated one by one with 500ms delay using setTimeout()
-
 const servicesImagesAnimationOnScroll = () => {
     const scroll = $(window).scrollTop();
 
@@ -325,7 +320,6 @@ const servicesImagesAnimationOnScroll = () => {
         servicesImagesAnimation();
     }
 }
-
 
 // this function adds animations to services buttons after scrolling, 
 // then removes the animations 2 seconds later to add on hover animations
@@ -380,8 +374,6 @@ const addServicesAnimationByIndex = (i) => {
     $(services[i].children[1]).addClass('services-images-animation');
 }
 
-
-
 // EVENT LISTENERS
 
 // ON LOAD IF MOBILE SCREEN SIZE THEN SET MOBILE SIZE SLIDER IMAGES
@@ -403,7 +395,6 @@ $(window).scroll(() => {
     videoAnimationOnScroll();
     
 })
-
 
 
 // DRAG SCROLL SLIDER CONTROLS

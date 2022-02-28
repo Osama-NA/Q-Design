@@ -224,33 +224,27 @@ body{
     color: #313131;
     background-color: rgb(238, 238, 238);
     overflow-y: auto;
-    
 }
-
 .form-container nav .menu li{
     display: flex;
     align-items: center;
     min-height: 2.25rem;
     font-weight: 500;
     padding: 0 1rem;
-    
-    
 }
 
 .form-container nav .menu::-webkit-scrollbar{
-width: 3px;
+    width: 3px;
 }
 .form-container nav .menu::-webkit-scrollbar-thumb{
-background-color: #F0502B;
+    background-color: #F0502B;
 }
-
 .form-container nav .menu li, .form-container nav .menu-selected input, .form-container nav .menu-selected{
     cursor: pointer;
 }
 .form-container nav .menu li:hover{
     color: rgb(238, 238, 238);
     background-color: #313131;
-
 }
 .form-container form textarea{
     min-height: 100px;

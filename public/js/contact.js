@@ -40,8 +40,6 @@ const setChosenService = (e) => {
     handleSelectedServiceClick();
 }
 
-
-
 const handleContactFormSubmit = (e) => {
     e.preventDefault();
     
@@ -78,7 +76,6 @@ const isMessageValid = (message) => {
 }
 
 
-
 // EVENT LISTENERS
 selectedService.addEventListener('click', handleSelectedServiceClick);
 
@@ -87,9 +84,6 @@ if(services){
         services[i].addEventListener('click', setChosenService);
     }
 }
-
-
-
 
 contactForm.addEventListener('submit', handleContactFormSubmit);
 

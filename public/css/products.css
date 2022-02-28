@@ -68,7 +68,7 @@ body{
     border-top: .75px solid #F0502B;
 }
 .products-containers section:nth-child(1){
-    height: 61vh;
+    height: 62vh;
 }
 .no-border-top{
     border-top: none !important;
@@ -134,7 +134,7 @@ body{
 .product-information h1::after{ 
     content: '';
     height: 3px;
-    width: 120px;;
+    width: 15%;
     background-color: #ff6340;
     position: absolute;
     top: 5.2rem;
@@ -292,4 +292,172 @@ body{
 .mothers-logo{ /* Mothers logo */
     width: 35% !important;
     animation-name: productImageFadeInAnimation;
+}
+
+
+/* VISIT MOTHERS */
+.visit-mothers-container{
+    padding: 8rem 0;
+    display: grid;
+    place-items: center;
+}
+
+.visit-mothers-container a{
+    text-decoration: none;
+    color: #131313;
+    font-size: 24px;
+    letter-spacing: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.visit-mothers-container a span:nth-child(1){
+    background-color: #F0502B;
+    margin-right: 1.25rem;
+    height: 40px;
+    width: 7px;
+}
+.visit-mothers-container a span:nth-child(2){
+    color: #F0502B;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 32px;
+    margin: 0 1rem;
+    letter-spacing: 1px;
+}
+.visit-mothers-container a .arrows{
+    position: relative;
+    left: 1rem;
+    font-size: 18px;
+    transition: all .1s ease;
+}
+.visit-mothers-container a:hover .arrows{
+    left: 1.25rem;
+}
+
+@keyframes aboutUsContainerOneAnimation{
+    from{
+        opacity: 0;
+        top: -15rem;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+@keyframes aboutUsContainerTwoAnimation{
+    from{
+        opacity: 0;
+        left: 15rem;
+    }
+    to{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes aboutUsContainerThreeAnimation{
+    from{
+        opacity: 0;
+        left: -15rem;
+    }
+    to{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes aboutUsContainerFourAnimation{
+    from{
+        opacity: 0;
+        top: 15rem;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+/* .who-are-we-1{
+    animation-name: aboutUsContainerOneAnimation;
+}
+.who-are-we-2{
+    animation-name: aboutUsContainerTwoAnimation;
+}
+.who-are-we-3{
+    animation-name: aboutUsContainerThreeAnimation;
+}
+.who-are-we-4{
+    animation-name: aboutUsContainerFourAnimation;
+} */
+
+/* PARTNERS */
+.partners-container{
+    color: #131313;
+    width: 100%;
+    align-items: center;
+    padding: 6rem 0;
+}
+.partners-container .heading{
+    padding: 0 0 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.partners-container h1{
+    font-size: 32px;
+    font-weight: 900;
+    text-transform:  uppercase;
+    letter-spacing: 3.5px;
+}
+.partners-container .heading .underline{ /* line below partners title */
+    margin-top: 2rem;
+    height: 3px;
+    width: 180px;
+    background-color: #F0502B;
+}
+.partners-list{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@keyframes partnersContainersAnimations{
+    from{
+        opacity: 0;
+        bottom: -10rem;
+    }
+    to{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+.partners-list .partner{
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 1rem;
+    background-color: rgb(240, 240, 240);
+    box-shadow: -8px 8px 10px 1.5px  rgba(58, 58, 58, 0.10);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+.partners-list .partner:nth-child(2){
+    animation-delay: .2s;
+}
+.partners-list .partner:nth-child(3){
+    animation-delay: .4s;
+}
+.partners-list .partner:nth-child(4){
+    animation-delay: .6s;
+}
+.partners-list .partner:nth-child(5){
+    animation-delay: .8s;
+}
+.partners-list .partner:nth-child(6){
+    animation-delay: 1s;
+}
+.partners-list .partner img{
+    height: auto;
+    width: 150px;
 }

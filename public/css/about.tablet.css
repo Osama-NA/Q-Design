@@ -11,9 +11,8 @@
     }
         
     /* INFORMATION ABOUT US */
-    .information, .about-us-information-pic-container{
-        height: auto;
-        margin: 2.5rem 0;
+    .about-us-information{
+        padding: 3rem 0;
     }
     .information{
         margin-left: 1.5rem;
@@ -44,7 +43,7 @@
 
     /* PARTNERS */
     .partners-container{
-        padding: 2rem 0;
+        padding: 3rem 0;
     }
     .partners-container .heading{
         padding: 0 0 1.75rem;
@@ -90,20 +89,23 @@
         flex-wrap: wrap-reverse;
     }
     .who-are-we > *{
-        min-height: 47.5vw;
+        height: 320px;
     }
     .who-are-we .description{
-        width: 90%;
+        width: 100%;
+        padding: 0 2rem;
         line-height: 22px;
         font-size: 13px;
     }
     .who-are-we .title{
-        width: 90%;
+        width: 100%;
+        padding: 0 2rem;
         padding: 1.5rem 0;
     }
     .who-are-we .title i{
         font-size: 35px;
         padding-right: 1.5rem;
+        margin-left: 2rem;
     }
     .who-are-we .title h3{
         font-size: 19px;
@@ -120,10 +122,6 @@
     }
         
     /* INFORMATION ABOUT US */
-    .information, .about-us-information-pic-container{
-        height: auto;
-        margin: 3rem 0;
-    }
     .information{
         margin-left: 2rem;
     }
@@ -170,7 +168,7 @@
         flex-wrap: wrap-reverse;
     }
     .who-are-we > *{
-        height: 35vw;
+        height: 320px;
     }
     .who-are-we .description{
         width: 85%;
@@ -188,16 +186,15 @@
     .who-are-we .title h3{
         font-size: 20px;
     }
+    /* PARTNERS */
+    .partners-container{
+        padding: 5rem 0;
+    }
 }
 @media (max-width: 1450px) and (min-width: 1200px){
     /* ABOUT US HEADER */
     .about-us-header{
         background-position-y: -300px;
-    }
-        
-    /* INFORMATION ABOUT US */
-    .information, .about-us-information-pic-container{
-        height: 67.5vh;
     }
     .information{
         margin-left: 3rem;
@@ -239,7 +236,7 @@
 
     /* WHO ARE WE */
     .who-are-we > *{
-        height: 32.5vw;
+        height: 320px;
     }
     .who-are-we{
         flex-wrap: wrap-reverse;
@@ -259,5 +256,9 @@
     }
     .who-are-we .title h3{
         font-size: 22px;
+    }
+    /* PARTNERS */
+    .partners-container{
+        padding: 6rem 0;
     }
 }

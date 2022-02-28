@@ -10,14 +10,17 @@
     }
 
     /* PRODUCTS */
-    .products-containers section, .products-containers section:nth-child(1){
+    .products-containers section{
         height: 42.5vh;
+    }
+    .products-containers section:nth-child(1){
+        height: 50vh;
     }
 
     /* PRODUCT INFORMATION */
     .product-information > *{
         padding: .6rem;
-        margin-left: 2.5rem;
+        margin-left: 2rem;
     }
     .product-information h1{
         font-size: 24px;
@@ -58,6 +61,26 @@
     .contact-buttons .quote, .contact-buttons .number{
         width: 175px;
     }
+
+    /* VISIT MOTHERS */
+    .visit-mothers-container{
+        padding: 6rem 0;
+    }
+    .visit-mothers-container a{
+        font-size: 20px;
+    }
+    .visit-mothers-container a span:nth-child(1){
+        margin-right: 1.25rem;
+        height: 35px;
+        width: 5px;
+    }
+    .visit-mothers-container a span:nth-child(2){
+        font-size: 28px;
+    }
+    .visit-mothers-container a .arrows{
+        font-size: 14px;
+        left: .5rem;
+    }
 }
 @media (max-width: 1200px) and (min-width: 1000px){
     /* PRODUCTS HEADER */
@@ -71,10 +94,7 @@
 
     /* PRODUCTS */
     .products-containers section{
-        height: 32.5vh;
-    }
-    .products-containers section:nth-child(1){
-        height: 37.5vh;
+        height: 35vh;
     }
 
     /* PRODUCT INFORMATION */
@@ -91,7 +111,7 @@
         margin: 0 .6rem;
     }
     .product-information p {
-        font-size: 15px;
+        font-size: 14px;
         width: 51ch;
     }
 
@@ -108,6 +128,25 @@
     .contact-buttons .quote, .contact-buttons .number{
         width: 200px;
     }
+
+    /* VISIT MOTHERS */
+    .visit-mothers-container{
+        padding: 6rem 0;
+    }
+    .visit-mothers-container a{
+        font-size: 22px;
+    }
+    .visit-mothers-container a span:nth-child(1){
+        height: 37.5px;
+        width: 6px;
+    }
+    .visit-mothers-container a span:nth-child(2){
+        font-size: 30px;
+    }
+    .visit-mothers-container a .arrows{
+        font-size: 16px;
+        left: .75rem;
+    }
 }
 @media (max-width: 1450px) and (min-width: 1200px){
     /* PRODUCTS HEADER */
@@ -116,11 +155,8 @@
     }
 
     /* PRODUCTS */
-    .products-containers section, .products-containers section:nth-child(1){
+    .products-containers section{
         height: 45vh;
-    }
-    .products-containers section:nth-child(1){
-        height: 57.5vh;
     }
 
     /* PRODUCT INFORMATION */

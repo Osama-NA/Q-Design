@@ -19,12 +19,11 @@
         flex-direction: column;
         min-height: 50vh;
         height: auto;
-        padding: .25rem 0;
+        padding: 2rem 1rem;
     }
     .products-containers section:nth-child(1){
         height: auto;
         min-height: 45vh;
-        padding: 1rem 0;
     }
     .product-pic-container{
         display: flex;
@@ -38,6 +37,9 @@
         background-color: transparent;
         color: rgb(32, 32, 32);
     }
+    .product:nth-child(1) .product-information {
+        align-items: center;
+    }
     .product-information, .product-pic-container{
         width: 100%;
     }
@@ -45,7 +47,7 @@
     /* PRODUCT INFORMATION */
     .product-information > *{
         padding: .5rem;
-        margin-left: 1rem;
+        margin-left: 0;
     }
     .product-information h1{
         color: rgb(32, 32, 32);
@@ -57,18 +59,29 @@
         top: 3rem;
         margin: 0 .5rem;
     }
+    .product:nth-child(1) .product-information h1::after{ 
+        left: 15%;
+        width: 140px;
+    }
     .product-information p {
-        width: 50ch;
+        width: 100%;
         font-size: 12px;
         color: rgb(44, 44, 44);
+        padding-right: 1.5rem;
+    }
+    .product:nth-child(1) .product-information p {
+        text-align: center;
     }
 
     /* PRODUCT IMAGE CONTAINER */
     .product-pic-container img{
         width: 85%;
+        max-width: 300px;
+        margin: 1rem;
     }
     .mothers-logo{ /* Mothers logo */
         width: 50% !important;
+        max-width: 200px !important;
     }
 
     .contact-buttons a {
@@ -97,4 +110,61 @@
     .dark-container-for-mobile p{
         color: rgb(211, 211, 211);
     }
+
+    /* VISIT MOTHERS */
+    .visit-mothers-container{
+        padding: 4rem 0;
+    }
+
+    .visit-mothers-container a{
+        font-size: 16px;
+        letter-spacing: 3px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .visit-mothers-container a span:nth-child(1){
+        margin-right: .75rem;
+        height: 32.5px;
+        width: 4px;
+    }
+    .visit-mothers-container a span:nth-child(2){
+        font-size: 22px;
+        margin: 0 .5rem;
+    }
+    .visit-mothers-container a .arrows{
+        position: relative;
+        left: .25rem;
+        font-size: 12px;
+    }
+    .visit-mothers-container a:hover .arrows{
+        left: .5rem;
+    }
+    /* PARTNERS */
+    .partners-container{
+        padding: 4rem 1rem;
+        justify-content:center;
+    }
+    .partners-container .heading{
+        padding: 0 0 1.25rem;
+    }
+    .partners-container h1{
+        font-size: 22px;
+    }
+    .partners-container .heading .underline{ /* line below partners title */
+        margin-top: 1.2rem;
+        height: 2.5px;
+        width: 135px;
+    }
+    .partners-list .partner{
+        width: 120px;
+        height: 70px;
+        margin: .5rem;
+        box-shadow: -8px 8px 10px 1.5px  rgba(58, 58, 58, 0.10);
+    }
+    .partners-list .partner img{
+        width: 70px;
+    }
+
 }

@@ -32,6 +32,36 @@ const addSlideInFromRightAnimation = (container) => {
 const addSlideInFromLeftAnimation = (container) => {
     $(container).css("animation-name", 'productInfoSlideInFromLeftAnimation');
 }
+const addPartnersContainerAnimation = () => {
+    $('.partners-list .partner').css("animation-name", "partnersContainersAnimations");
+}
+
+//Adds animation to partners containers on scroll according to the screen's width
+const partnersContainersAnimation = () => {
+    if (isMobile()) {
+        if (scrollTopValue() > 1225) {
+            addPartnersContainerAnimation();
+        }
+    }
+    if (screenWidth() < 1000) {
+        if (scrollTopValue() > 900) {
+            addPartnersContainerAnimation();
+        }
+    }
+    if (screenWidth() < 1200) {
+        if (scrollTopValue() > 950) {
+            addPartnersContainerAnimation();
+        }
+    }
+    if (screenWidth() < 1400) {
+        if (scrollTopValue() > 1150) {
+            addPartnersContainerAnimation();
+        }
+    }
+    if (scrollTopValue() > 1200) {
+            addPartnersContainerAnimation();
+    }
+}
 
 //Function adding Image fade-in animation to each product
 const addProductsImagesAnimations = () => {
@@ -196,4 +226,5 @@ window.onload = () => {
 }
 $(window).scroll(() => {
     addProductsImagesAnimations();
+    partnersContainersAnimation();
 })

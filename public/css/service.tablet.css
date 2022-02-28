@@ -1,0 +1,232 @@
+@media (max-width: 1000px) and (min-width: 768px) {
+    /* SERVICE HEADER */
+.service-header{
+    height: 250px;
+    background-position-y: -150px;
+}
+.service-header h1{
+    font-size: 26px;
+    padding-bottom: 2rem;
+}
+
+/* SERVICE CONTAINER  */
+.service-container{
+    padding: 1.5rem 0;
+}
+
+/* SERVICE INFO AND PIC CONTAINER */
+.service-info-and-pic{
+    margin: 2rem;
+}
+.service-info-and-pic .service-pic{
+    padding-right: 1rem;
+}
+.service-info-and-pic .service-pic img{
+    max-width: 300px;
+}
+
+.service-info .heading h1{
+    font-size: 24px;
+}
+.service-info .heading .underline{ 
+    margin-top: 1rem;
+    margin-bottom: .75rem;
+    height: 2.5px;
+    width: 150px;
+}
+.service-info .information p, .service-info .information ul li{
+    font-size: 14px;
+    padding: .6rem 0;
+}
+.service-info .information ul li{
+    max-width: 55ch;
+    margin-left: 2rem;
+}
+.service-info .information h2, .service-info .information h3{
+    font-size: 16px;
+}
+.service-info .information h2{
+    padding-top: .75rem;
+}
+.service-info .information h3{
+    padding-top: .5rem;
+}
+
+/* SERVICE INFO  */
+.service-info  .links > *{
+    font-size: 14px;
+    padding: .65rem .8rem;
+    margin: .75rem 0; 
+}
+.service-info  .quote{
+    margin-left: .75rem;
+}
+
+/* VIDEO AND FEATURES CONTAINER */
+.service-video-and-features{
+    margin: 2rem;
+}
+
+/* FEATURES */
+.service-video-and-features .features > *{
+    padding: .75rem 0;
+}
+.service-video-and-features .features h3{
+    font-size: 16px;
+}
+.service-video-and-features .features p, .service-video-and-features .features ul li{
+    font-size: 14px;
+    max-width: 60ch;
+}
+.service-video-and-features .features ul li{
+    max-width: 55ch;
+    margin-left: 1.5rem;
+}
+
+/* VIDEO */
+.service-video-and-features .video{
+    margin-right: 2rem;
+}
+}
+@media (max-width: 1200px) and (min-width: 1000px){
+/* SERVICE HEADER */
+.service-header{
+    background-position-y: -250px;
+}
+.service-header h1{
+    font-size: 26px;
+    padding-bottom: 2.25rem;
+}
+
+/* SERVICE CONTAINER  */
+.service-container{
+    padding: 4rem 0;
+}
+
+/* SERVICE INFO AND PIC CONTAINER */
+.service-info-and-pic{
+    margin: 2rem 2.5rem 4.5rem;
+}
+.service-info-and-pic .service-pic{
+    max-width: 50vw;
+}
+.service-info-and-pic .service-pic img{
+    max-width: 30vw;
+    min-width: 300px;
+}
+
+.service-info .heading h1{
+    font-size: 26px;
+}
+.service-info .heading .underline{ 
+    margin-top: 1rem;
+    margin-bottom: .75rem;
+    width: 125px;
+}
+.service-info .information p, .service-info .information ul li{
+    font-size: 14px;
+    max-width: 65ch;
+    padding: .5rem 0;
+}
+.service-info .information ul li{
+    max-width: 60ch;
+    margin-left: 1rem;
+}
+.service-info .information h2, .service-info .information h3{
+    font-size: 18px;
+}
+.service-info .information h2{
+    padding-top: .75rem;
+}
+.service-info .information h3{
+    padding-top: .5rem;
+}
+
+/* SERVICE INFO  */
+.service-info  .links > *{
+    font-size: 14px;
+}
+
+/* VIDEO AND FEATURES CONTAINER */
+.service-video-and-features{
+    margin: 2rem 2.5rem 4.5rem;
+}
+
+/* FEATURES */
+.service-video-and-features .features > *{
+    padding: .75rem 0;
+}
+.service-video-and-features .features h3{
+    font-size: 18px;
+}
+.service-video-and-features .features p, .service-video-and-features .features ul li{
+    font-size: 14px;
+    max-width: 65ch;
+}
+.service-video-and-features .features ul li{
+    max-width: 60ch;
+    margin-left: 1rem;
+}
+
+/* VIDEO */
+.service-video-and-features .video{
+    margin-right: 2.5rem;
+}
+}
+@media (max-width: 1450px) and (min-width: 1200px){
+/* SERVICE HEADER */
+.service-header{
+    background-position-y: -300px;
+}
+
+/* SERVICE INFO AND PIC CONTAINER */
+.service-info .heading h1{
+    font-size: 28px;
+}
+.service-info .heading .underline{ 
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+}
+.service-info .information p, .service-info .information ul li{
+    font-size: 15px;
+    max-width: 77ch;
+    padding: .75rem 0;
+}
+.service-info .information ul li{
+    max-width: 65ch;
+    margin-left: 1.5rem;
+}
+.service-info .information h2, .service-info .information h3{
+    font-size: 20px;
+}
+.service-info .information h2{
+    padding-top: 1rem;
+}
+.service-info .information h3{
+    padding-top: .75rem;
+}
+
+.service-info  .links > *{
+    font-size: 15px;
+    margin: .75rem 0; 
+}
+.service-info .quote{
+    margin-left: .75rem;
+}
+
+/* FEATURES */
+.service-video-and-features .features > *{
+    padding: .75rem 0;
+}
+.service-video-and-features .features h3{
+    font-size: 20px;
+}
+.service-video-and-features .features p, .service-video-and-features .features ul li{
+    font-size: 15px;
+    max-width: 70ch;
+}
+.service-video-and-features .features ul li{
+    max-width: 65ch;
+    margin-left: 1.5rem;
+}
+}

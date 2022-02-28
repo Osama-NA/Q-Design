@@ -184,7 +184,7 @@
 }
 
 
-                    /* MOBILE DESIGN */
+     /* MOBILE DESIGN */
 
 @media (max-width: 767px) {
     /* HEADER */
@@ -199,8 +199,8 @@
     .socials-nav{
         display: none;
     }
-    .logo{
-        width: 140px;
+    .pages-nav .logo{
+        max-width: 140px;
     }
 
     @keyframes openMenuAnimation{
@@ -234,7 +234,7 @@
         min-height: 92.5vh;
         height: 100%;
         padding-top: 2rem;
-        background-color: rgb(32, 32, 32);
+        background-color: #131313;
         animation-name: openMenuAnimation;
         animation-duration: .5s;
         animation-fill-mode: forwards;
@@ -252,7 +252,7 @@
         height: 25px;
         width: 2px;
         top: 6.5px;
-        left: 20px;
+        
     }
     .pages-nav .services:hover::after, .pages-nav .services li:hover::after{
         display: none;

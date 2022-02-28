@@ -9,9 +9,7 @@ const nav = document.querySelector('.pages-nav');
 
 // FUNCTIONS
 
-// RETURNS WHETHER CURRENT SCREEN SIZE IS MOBILE SIZE OR NOT
 const isMobile = () => window.screen.width < 768 ? true : false;
-// RETURNS WHETHER CURRENT SCREEN SIZE IS TABLET SIZE OR NOT
 const isTablet = () => window.screen.width >= 768 && window.screen.width <= 1200 ? true : false;
 
 setTimeout(() => {
@@ -19,7 +17,6 @@ setTimeout(() => {
     $(menuButton).css("animation-name", "none");
 }, 2000);
 
-// MENU BUTTON ON CLICK ANIMATIONS
 const addOpenButtonAnimation = () => {
     $('.dash1').css("animation-name", "dashOneOpenAnimation");
     $('.dash2').css("animation-name", "dashTwoOpenAnimation");
@@ -33,7 +30,6 @@ const closeOpenButtonAnimation = () => {
     isMenuOpened = false;
 }
 
-// STYLING ON SHOW / HIDE NAV MENU
 const openMenu = () => {
     $('.pages-nav .links').css("display", "flex");
     $(`.pages-nav .links`).css("animation-name", "openMenuAnimation");
@@ -42,9 +38,8 @@ const closeMenu = () => {
     $(`.pages-nav .links`).css("animation-name", "closeMenuAnimation");
 }
 
-// STYLING ON SHOW / HIDE SERVICES DROP DOWN MENU
 const openServicesMenu = () => {
-    $(".below-services").css("margin-top", "31.7rem");
+    $(".below-services").css("margin-top", "29.4rem");
     $(".services ul").css("display", "flex");
     $(servicesMenuButton).css("transform", "rotateZ(0deg)");
     isServicesMenuOpened = true;
@@ -56,7 +51,7 @@ const closeServicesMenu = () => {
     isServicesMenuOpened = false;
 }
 
-// AFTER 100px SCROLL GIVE NAV BAR BACKGROUND COLOR
+// AFTER 75px SCROLL GIVE NAV BAR BACKGROUND COLOR
 const setNavBackground = () => {
     if (isMobile()) return;
 
@@ -66,7 +61,6 @@ const setNavBackground = () => {
         $(nav).css("background-color", "transparent");
     }
 }
-
 
 // EVENT LISTENERS
 
@@ -88,7 +82,7 @@ menuButton.addEventListener('click', () => {
 })
 
 // SHOW / HIDE SERVICES DROP DOWN MENU
-servicesMenuButton.addEventListener('click', () => {
+servicesMenuButton.parentElement.addEventListener('click', () => {
     //Mobile
     if (isMobile()) {
         if (!isServicesMenuOpened) {
@@ -109,4 +103,3 @@ servicesMenuButton.addEventListener('click', () => {
         }
     }
 })
-

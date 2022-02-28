@@ -60,10 +60,10 @@ body{
 /* INFORMATION ABOUT US */
 .about-us-information{
     border-top: .75px solid #F0502B;
+    padding: 5.5rem 0;
 }
 .information, .about-us-information-pic-container{
     width: 50%;
-    height: 83.4vh;
 }
 .information{
     justify-content: center;
@@ -132,7 +132,9 @@ body{
 .about-us-information-pic img{
     width: 100%;
     height: auto;
+    
 }
+
 /* CONTACT BUTTON */
 @keyframes buttonHoverAnimation{
     0%{
@@ -245,9 +247,8 @@ body{
     top: 0;
     left: 0;
     width: 50%;
-    height: 30vw;
+    height: 380px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     animation-duration: .75s;
     animation-timing-function: ease-out;
@@ -263,7 +264,7 @@ body{
 .who-are-we .title{
     width: 75%;
     align-items: center;
-    padding: 3rem 0;
+    padding: 2.5rem 0;
 }
 .who-are-we .title i{
     color: #ff6340;
@@ -345,7 +346,7 @@ body{
     color: #131313;
     width: 100%;
     align-items: center;
-    padding: 4.5rem 0;
+    padding: 6rem 0;
 }
 .partners-container .heading{
     padding: 0 0 2rem;

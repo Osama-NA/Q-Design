@@ -22,6 +22,11 @@ const handleSelectedServiceClick = () => {
     showServicesMenu = !showServicesMenu;
 }
 
+const addPopUp = (i) => {
+    $(`.contact-us-info-${i}`).css("animation-name", "sliderInfoAnimation");
+    $(`.slide-info-${i} .slider-info-border`).css("animation-name", "sliderInfoBorderAnimation");
+}
+
 // sets the selected service to current service and vice versa 
 // to allow user to re-select previously selected service
 // handleSelectedServiceClick is called to close menu after a service is selected
@@ -34,6 +39,8 @@ const setChosenService = (e) => {
 
     handleSelectedServiceClick();
 }
+
+
 
 const handleContactFormSubmit = (e) => {
     e.preventDefault();
@@ -70,6 +77,8 @@ const isMessageValid = (message) => {
     return true;
 }
 
+
+
 // EVENT LISTENERS
 selectedService.addEventListener('click', handleSelectedServiceClick);
 
@@ -79,4 +88,8 @@ if(services){
     }
 }
 
+
+
+
 contactForm.addEventListener('submit', handleContactFormSubmit);
+

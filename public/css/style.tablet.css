@@ -165,8 +165,8 @@
         top: -50px;
     }
     .about-us-description, .about-us-image{
-        min-height: 40vh;
         height: auto;
+        margin: 0;
     }
     .about-us-description{
         justify-content: center;
@@ -186,6 +186,7 @@
         left: -.5rem;
     }
     .about-us-description p {
+        max-width: 60ch;
         font-size: 14px;
         color: rgb(29, 29, 29);
     }
@@ -205,8 +206,8 @@
 
     /* SERVICES */
     .services-description, .services-images{
-        min-height: 40vh;
         height: auto;
+        margin: 4rem 0;
     }
     /* SERVICES DESCRIPTION */
     .services-description{
@@ -214,6 +215,7 @@
     }
     .services-description > *{
         padding: .6rem;
+        padding-right: 1rem;
     }
     .services-description h1{
         font-size: 26px;
@@ -226,6 +228,7 @@
         left: -.5rem;
     }
     .services-description p {
+        max-width: 60ch;
         font-size: 14px;
         color: rgb(29, 29, 29);
     }
